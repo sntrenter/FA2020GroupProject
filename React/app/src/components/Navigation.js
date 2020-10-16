@@ -16,6 +16,11 @@ const Navigation = () => {
                         v1/summaryactivity
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink to="/activity">
+                        v1/rawactivity
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );
