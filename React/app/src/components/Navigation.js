@@ -21,6 +21,11 @@ const Navigation = () => {
                         v1/rawactivity
                     </NavLink>
                 </li>
+                <li>
+                    <NavLink to="/Chart">
+                        Chart
+                    </NavLink>
+                </li>
             </ul>
         </div>
     );
