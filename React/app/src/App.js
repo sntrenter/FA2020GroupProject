@@ -1,27 +1,22 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import React from 'react';
+import { useRoutes } from 'react-router-dom';
+import { ThemeProvider } from '@material-ui/core';
+import GlobalStyles from './components/GlobalStyles';
+// import 'src/mixins/chartjs';
+import theme from './theme/theme';
+import routes from '../src/routes';
 
-import Home from './components/Home';
-import Summary from './components/Summary';
-import Navigation from './components/Navigation';
-import Activity from "./components/Activity";
-import Chart from "./components/Chart";
+const App = () => {
+  const routing = useRoutes(routes);
 
-class App extends Component{
-    render(){
-        return (
-            <BrowserRouter>
-            <div>
-            <Navigation />
-                <Switch>
-                <Route path="/" component={Home} exact/>
-                <Route path="/summary" component={Summary}/>
-                <Route path="/activity" component={Activity}/>
-                <Route path="/Chart" component={Chart}/>
-                </Switch>
-            </div>
-            </BrowserRouter>
-        );
-    }
-}
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      {routing}
+    </ThemeProvider>
+      
+  );
+};
+
 export default App;
