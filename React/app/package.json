@@ -10,14 +10,11 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
-<<<<<<< HEAD
     "gh-pages": "^3.1.0",
-=======
     "chart.js": "^2.9.4",
     "formik": "^2.2.3",
     "history": "^5.0.0",
     "moment": "^2.29.1",
->>>>>>> 1797f251e53ba258911b6046b651104ef1d6754c
     "react": "^16.13.1",
     "react-chartjs-2": "^2.11.1",
     "react-dom": "^16.13.1",
