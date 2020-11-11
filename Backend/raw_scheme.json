@@ -37,11 +37,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "data_type",
-        "quantity",
-        "quality"
-      ]
+      
     }
   }
 }
