@@ -2,7 +2,7 @@
 1. Simple Raw Activity Schema (simple_raw_activity.json)
 2. Raw Activity Schema that has depedency with data_type, quality and quantity(raw_activity.json)
 
-- Basic Description : 
+Basic Description : 
 |Feature      |       Id      | Device ID | Interaction_date_time |
 | ---         |      ---      | ---       | --- |
 | Description | Object ID     | Device ID | Date and time that recorded |
