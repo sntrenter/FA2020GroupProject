@@ -8,9 +8,9 @@ Basic Description :
 | Description | Object ID     | Device ID | Date and time that recorded | Caregiver ID   | activity, health, symptom | waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
 | Type        | string       | string | string | string(can be number) | string | string | number or string | string|
 
-format of date-time is represented as [RFC 3339, section 5.6](https://json-schema.org/draft/2019-09/json-schema-validation.html), and This is a subset of the date format also commonly known as ISO8601 format
+* Format of date-time is represented as [RFC 3339, section 5.6](https://json-schema.org/draft/2019-09/json-schema-validation.html), and This is a subset of the date format also commonly known as ISO8601 format
 
-Also, this information can be found in here : [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/UnderstandingJSONSchema.pdf)
+* Also, this information can be found in here : [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/UnderstandingJSONSchema.pdf)
 
 ---
 
