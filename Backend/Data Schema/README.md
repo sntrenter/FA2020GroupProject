@@ -1,7 +1,7 @@
 ### Two Raw Database Schema
 1. Simple Raw Activity Schema (simple_raw_activity.json)
 2. Raw Activity Schema that has depedency with data_type, quality and quantity(raw_activity.json)
-
+----
 Basic Description : 
 |Feature      |       Id      | Device ID | Interaction_date_time       | Interaction_id | recorded_type             | data type | quanitity | quality |
 | ---         |      ---      | ---       | ---                         |      ---       |   ---                     | ---       | ---       | ---     |
@@ -12,8 +12,7 @@ Basic Description :
 
 * Also, this information can be found in here : [Understanding JSON Schema](https://json-schema.org/understanding-json-schema/UnderstandingJSONSchema.pdf)
 
----
+* The reason why I put depedency is to make it more categorizable.
 
-The reason why I put depedency is to make it more categorizable.
-
+----
 ### Summary Database Schema
