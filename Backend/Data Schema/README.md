@@ -6,6 +6,6 @@ Basic Description :
 |Feature      |       Id      | Device ID | Interaction_date_time       | Interaction_id | recorded_type             | data type | quanitity | quality |
 | ---         |      ---      | ---       | ---                         |      ---       |   ---                     | ---       | ---       | ---     |
 | Description | Object ID     | Device ID | Date and time that recorded | Caregiver ID   | activity, health, symptom | waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
-| Type        | string       | string | string | string(can be number) |string | number or string | string|
+| Type        | string       | string | string | string(can be number) | string | string | number or string | string|
 
 ### Summary Database Schema
