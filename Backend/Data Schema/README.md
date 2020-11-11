@@ -3,8 +3,10 @@
 2. Raw Activity Schema that has depedency with data_type, quality and quantity(raw_activity.json)
 
 Basic Description : 
-|Feature      |       Id      | Device ID | Interaction_date_time       | Interaction_id | recorded_type             |
-| ---         |      ---      | ---       | ---                         |      ---       |   ---                     |
-| Description | Object ID     | Device ID | Date and time that recorded | Caregiver ID   | activity(waking, sleeping), Health(feeling, sleep), Symptom(fever, etc) |
+|Feature      |       Id      | Device ID | Interaction_date_time       | Interaction_id | recorded_type             | data type | quanitity | quality |
+| ---         |      ---      | ---       | ---                         |      ---       |   ---                     | ---       | ---       | ---     |
+| Description | Object ID     | Device ID | Date and time that recorded | Caregiver ID   | activity, health, symptom | waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
+| ---         |  ---         | ---    | ---    |         ---           |  ---  |       ---        | ---   |
+| Type        | string       | string | string | string(can be number) |string | number or string | string|
 
 ### Summary Database Schema
