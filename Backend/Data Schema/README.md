@@ -25,3 +25,8 @@
 | ---         |      ---      | ---       | ---                     |      ---       |   ---                     | ---       | ---       | ---     | --- |
 | Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | *_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
 | Type        | string       | string | string | string(can be number) | string | dict | string | number or string | string|
+
+### Testing Summary Activity Database Schema
+<p alight = "center">
+  <img src="../img/test.png" width = "200" height = "200" >
+</p>
