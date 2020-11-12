@@ -46,5 +46,5 @@
 The chart can be drawn by using this [Awesome-JSON-Viewer](https://github.com/rbrahul/Awesome-JSON-Viewer)
 
 <p align = "center">
-  <img src="./img/test_summary_activity.PNG" width = "700" height = "500" >
+  <img src="./img/test_summary_activity.PNG" width = "600" height = "500" >
 </p>
