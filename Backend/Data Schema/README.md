@@ -35,7 +35,7 @@
 **Note :**
 1. Data is dictionary that stores data type, average quantity, average quality, and days(dictionary).
 2. Within Data, there is days dictionary to store all the days(7 days).
-3. Each days holds the ``device id``, ``interaction-date-time``, ``interaction-id``, ``data_type``, ``quantity``, ``quality``
+3. Each days holds the ``device id``, ``interaction-date-time``, ``interaction-id``, ``data_type``, ``quantity``, and ``quality``
 
 ### Testing Summary Activity Database Schema for ``simple_summary_activity.json``
 <p align = "center">
