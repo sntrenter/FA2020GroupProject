@@ -22,6 +22,6 @@ Basic Description :
 
 Basic Description :
 |Feature      |       Id      | Device ID | Summary_date_time       | Interaction_id | recorded_type             | data  | data.data_type | data.average_quanitity | data.average_quality |
-| ---         |      ---      | ---       | ---                         |      ---       |   ---                     | ---       | ---       | ---     |
+| ---         |      ---      | ---       | ---                     |      ---       |   ---                     | ---       | ---       | ---     | --- |
 | Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | (activity, health, symptom)_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
-| Type        | string       | string | string | string(can be number) | string | string | number or string | string|
+| Type        | string       | string | string | string(can be number) | string | dict | string | number or string | string|
