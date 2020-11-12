@@ -28,5 +28,5 @@
 
 ### Testing Summary Activity Database Schema
 <p alight = "center">
-  <img src="/img/test.png" width = "200" height = "200" >
+  <img src="./img/test.png" width = "200" height = "200" >
 </p>
