@@ -39,7 +39,7 @@
 
 ### Testing Summary Activity Database Schema for ``simple_summary_activity.json``
 <p align = "center">
-  <img src="./img/test.png" width = "800" height = "200" >
+  <img src="./img/test.png" width = "700" height = "200" >
 </p>
 
 ### Testing Summary Activity Database Schema for ``summary_activity.json``
