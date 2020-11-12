@@ -2,7 +2,7 @@
 1. Simple Raw Activity Schema (simple_raw_activity.json)
 2. Raw Activity Schema that has depedency with data_type, quality and quantity(raw_activity.json)
 ----
-Basic Description : 
+**Basic Description :** 
 |Feature      |       Id      | Device ID | Interaction_date_time       | Interaction_id | recorded_type             | data type | quanitity | quality |
 | ---         |      ---      | ---       | ---                         |      ---       |   ---                     | ---       | ---       | ---     |
 | Description | Object ID     | Device ID | Date and time that recorded | Caregiver ID   | activity, health, symptom | waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
@@ -20,7 +20,7 @@ Basic Description :
 2. It can be further developed if the ``days`` dict can be figured out, which it will grab the dictionaries for each days.
 ----
 
-Basic Description :
+**Basic Description :**
 |Feature      |       Id      | Device ID | Summary_date_time       | Interaction_id | recorded_type             | data  | data.data_type | data.average_quanitity | data.average_quality |
 | ---         |      ---      | ---       | ---                     |      ---       |   ---                     | ---       | ---       | ---     | --- |
 | Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | (activity, health, symptom)_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
