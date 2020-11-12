@@ -1,0 +1,233 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "number"
+		},
+		"device_id": {
+			"type": "number"
+		},
+		"interaction_id": {
+			"type": "number"
+		},
+		"date_time_summary": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"recorded_type": {
+			"type": "string"
+		},
+		"data": {
+			"type": "object",
+			"properties": {
+				"data_type": {
+					"type": "string"
+				},
+				"average_quantity": {
+					"type": "number"
+				},
+				"average_quality": {
+					"type": "string"
+				},
+				"days": {
+					"type": "object",
+					"day_1": {
+						"id": {
+							"type": "number"
+						},
+						"device_id": {
+							"type": "number"
+						},
+						"interaction_date_time": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"interaction_id": {
+							"type": "number"
+						},
+						"recorded_type": {
+							"type": "string"
+						},
+						"data_type": {
+							"type": "string"
+						},
+						"quantity": {
+							"type": "number"
+						},
+						"quality": {
+							"type": "string"
+						}
+					},
+					"day_2": {
+						"id": {
+							"type": "number"
+						},
+						"device_id": {
+							"type": "number"
+						},
+						"interaction_date_time": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"interaction_id": {
+							"type": "number"
+						},
+						"recorded_type": {
+							"type": "string"
+						},
+						"data_type": {
+							"type": "string"
+						},
+						"quantity": {
+							"type": "number"
+						},
+						"quality": {
+							"type": "string"
+						}
+					},
+					"day_3": {
+						"id": {
+							"type": "number"
+						},
+						"device_id": {
+							"type": "number"
+						},
+						"interaction_date_time": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"interaction_id": {
+							"type": "number"
+						},
+						"recorded_type": {
+							"type": "string"
+						},
+						"data_type": {
+							"type": "string"
+						},
+						"quantity": {
+							"type": "number"
+						},
+						"quality": {
+							"type": "string"
+						}
+					},
+					"day_4": {
+						"id": {
+							"type": "number"
+						},
+						"device_id": {
+							"type": "number"
+						},
+						"interaction_date_time": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"interaction_id": {
+							"type": "number"
+						},
+						"recorded_type": {
+							"type": "string"
+						},
+						"data_type": {
+							"type": "string"
+						},
+						"quantity": {
+							"type": "number"
+						},
+						"quality": {
+							"type": "string"
+						}
+					},
+					"day_5": {
+						"id": {
+							"type": "number"
+						},
+						"device_id": {
+							"type": "number"
+						},
+						"interaction_date_time": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"interaction_id": {
+							"type": "number"
+						},
+						"recorded_type": {
+							"type": "string"
+						},
+						"data_type": {
+							"type": "string"
+						},
+						"quantity": {
+							"type": "number"
+						},
+						"quality": {
+							"type": "string"
+						}
+					},
+					"day_6": {
+						"id": {
+							"type": "number"
+						},
+						"device_id": {
+							"type": "number"
+						},
+						"interaction_date_time": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"interaction_id": {
+							"type": "number"
+						},
+						"recorded_type": {
+							"type": "string"
+						},
+						"data_type": {
+							"type": "string"
+						},
+						"quantity": {
+							"type": "number"
+						},
+						"quality": {
+							"type": "string"
+						}
+					},
+					"day_7": {
+						"id": {
+							"type": "number"
+						},
+						"device_id": {
+							"type": "number"
+						},
+						"interaction_date_time": {
+							"type": "string",
+							"format": "date-time"
+						},
+						"interaction_id": {
+							"type": "number"
+						},
+						"recorded_type": {
+							"type": "string"
+						},
+						"data_type": {
+							"type": "string"
+						},
+						"quantity": {
+							"type": "number"
+						},
+						"quality": {
+							"type": "string"
+						}
+					}
+				}
+			}
+		}
+	},
+	"required": [
+		"device_id",
+		"date_time_summary",
+		"interaction_id",
+		"recorded_type"
+	]
+}
