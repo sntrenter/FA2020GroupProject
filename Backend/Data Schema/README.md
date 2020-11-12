@@ -28,5 +28,5 @@
 
 ### Testing Summary Activity Database Schema
 <p align = "center">
-  <img src="./img/test.png" width = "500" height = "200" >
+  <img src="./img/test.png" width = "800" height = "200" >
 </p>
