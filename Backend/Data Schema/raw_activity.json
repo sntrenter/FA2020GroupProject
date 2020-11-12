@@ -1,7 +1,7 @@
 {
   "type": "object",
   "properties": {
-    "_id": {
+    "id": {
       "type": "number"
     },
     "device_id": {
@@ -36,12 +36,7 @@
         "quality": {
           "type": "string"
         }
-      },
-      "required": [
-        "data_type",
-        "quantity",
-        "quality"
-      ]
+      }
     }
   }
 }

@@ -1,0 +1,36 @@
+{
+	"type": "object",
+	"properties": {
+		"id": {
+			"type": "number"
+		},
+		"device_id": {
+			"type": "number"
+		},
+		"interaction_date_time": {
+			"type": "string",
+			"format": "date-time"
+		},
+		"interaction_id": {
+			"type": "number"
+		},
+		"recorded_type": {
+			"type": "string"
+		},
+		"data_type": {
+			"type": "string"
+		},
+		"quantity": {
+			"type": "number"
+		},
+		"quality": {
+			"type": "string"
+		}
+	},
+	"required": [
+		"device_id",
+		"date_time",
+		"interaction_id",
+		"recorded_type"
+	]
+}

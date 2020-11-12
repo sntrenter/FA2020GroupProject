@@ -1,0 +1,65 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "device_id": {
+      "type": "number"
+    },
+    "interaction_id": {
+      "type": "number"
+    },
+    "date_time_summary": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "recorded_type": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "properties": {
+        "data_type": {
+          "type": "string"
+        },
+        "average_quantity": {
+          "type": "number"
+        },
+        "average_quality": {
+          "type": "string"
+        },
+        "days": {
+          "type": "object",
+          "day_1": {
+            "type": "object"
+          },
+          "day_2": {
+            "type": "object"
+          },
+          "day_3": {
+            "type": "object"
+          },
+          "day_4": {
+            "type": "object"
+          },
+          "day_5": {
+            "type": "object"
+          },
+          "day_6": {
+            "type": "object"
+          },
+          "day_7": {
+            "type": "object"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "device_id",
+    "date_time_summary",
+    "interaction_id",
+    "recorded_type"
+  ]
+}
