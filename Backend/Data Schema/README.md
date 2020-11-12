@@ -43,8 +43,8 @@
 </p>
 
 ### Testing Summary Activity Database Schema for ``summary_activity.json``
-The chart can be drawn by using this [Awesome-JSON-Viewer](https://github.com/rbrahul/Awesome-JSON-Viewer)
-
+* The chart can be drawn by using this [Awesome-JSON-Viewer](https://github.com/rbrahul/Awesome-JSON-Viewer)
+* The valid json file is located in the ``/test/test_summary_activity.json``
 <p align = "center">
   <img src="./img/test_summary_activity.PNG" width = "600" height = "380" >
 </p>
