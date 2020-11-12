@@ -37,9 +37,9 @@
 2. Within Data, there is days dictionary to store all the days(7 days).
 3. Each days holds the ``device id``, ``interaction-date-time``, ``interaction-id``, ``data_type``, ``quantity``, ``quality``
 
-### Testing Summary Activity Database Schema for simple_summary_activity.json
+### Testing Summary Activity Database Schema for ``simple_summary_activity.json``
 <p align = "center">
   <img src="./img/test.png" width = "800" height = "200" >
 </p>
 
-### Testing Summary Activity Database Schema for summary_activity.json
+### Testing Summary Activity Database Schema for ``summary_activity.json``
