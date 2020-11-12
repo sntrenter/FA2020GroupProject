@@ -24,6 +24,46 @@
         "data_type": "fever",
         "quantity": 45,
         "quality": "bad"
+      },
+      "day_3": {
+        "device_id ": 5543,
+        "interaction_date_time": "2018-11-11T20:20:39+00:00",
+        "recorded_type": "symptom",
+        "data_type": "fever",
+        "quantity": 45,
+        "quality": "bad"
+      },
+      "day_4": {
+        "device_id ": 5543,
+        "interaction_date_time": "2018-11-11T20:20:39+00:00",
+        "recorded_type": "symptom",
+        "data_type": "fever",
+        "quantity": 45,
+        "quality": "bad"
+      },
+      "day_5": {
+        "device_id ": 5543,
+        "interaction_date_time": "2018-11-11T20:20:39+00:00",
+        "recorded_type": "symptom",
+        "data_type": "fever",
+        "quantity": 45,
+        "quality": "bad"
+      },
+      "day_6": {
+        "device_id ": 5543,
+        "interaction_date_time": "2018-11-11T20:20:39+00:00",
+        "recorded_type": "symptom",
+        "data_type": "fever",
+        "quantity": 45,
+        "quality": "bad"
+      },
+      "day_7": {
+        "device_id ": 5543,
+        "interaction_date_time": "2018-11-11T20:20:39+00:00",
+        "recorded_type": "symptom",
+        "data_type": "fever",
+        "quantity": 45,
+        "quality": "bad"
       }
     }
   }
