@@ -16,3 +16,5 @@ Basic Description :
 
 ----
 ### Summary Database Schema
+1. Simple Summary Activity Schema (simple_summary_activity.json)
+2. It can be further developed if the ``days`` dict can be figured out.
