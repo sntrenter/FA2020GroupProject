@@ -27,6 +27,6 @@
 | Type        | string       | string | string | string(can be number) | string | dict | string | number or string | string|
 
 ### Testing Summary Activity Database Schema
-<p alight = "center">
-  <img src="./img/test.png" width = "200" height = "200" >
+<p align = "center">
+  <img src="./img/test.png" width = "500" height = "300" >
 </p>
