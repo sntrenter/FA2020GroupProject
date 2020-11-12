@@ -16,6 +16,14 @@
         "data_type": "walking",
         "quantity": 30,
         "quality": "good"
+      },
+      "day_2": {
+        "device_id ": 5543,
+        "interaction_date_time": "2018-11-11T20:20:39+00:00",
+        "recorded_type": "symptom",
+        "data_type": "fever",
+        "quantity": 45,
+        "quality": "bad"
       }
     }
   }
