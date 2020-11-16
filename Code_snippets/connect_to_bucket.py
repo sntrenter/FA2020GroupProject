@@ -1,8 +1,8 @@
 import boto3
 client = boto3.client(
 	service_name='s3', 
-	aws_access_key_id="AKIASLM7RHH4WDIPXE5K", 
-	aws_secret_access_key="6bBposuAq+FeQy5+dXdIRt37ABHYLtCyjRZUtoF5"
+	aws_access_key_id="XXXXX", 
+	aws_secret_access_key="XXXXX"
 	)
 
 # example for upload/download
