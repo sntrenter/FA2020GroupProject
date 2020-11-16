@@ -32,18 +32,9 @@
 				"days": {
 					"type": "object",
 					"day_1": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
-						},
-						"interaction_id": {
-							"type": "number"
 						},
 						"recorded_type": {
 							"type": "string"
@@ -59,18 +50,9 @@
 						}
 					},
 					"day_2": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
-						},
-						"interaction_id": {
-							"type": "number"
 						},
 						"recorded_type": {
 							"type": "string"
@@ -86,18 +68,9 @@
 						}
 					},
 					"day_3": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
-						},
-						"interaction_id": {
-							"type": "number"
 						},
 						"recorded_type": {
 							"type": "string"
@@ -113,18 +86,9 @@
 						}
 					},
 					"day_4": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
-						},
-						"interaction_id": {
-							"type": "number"
 						},
 						"recorded_type": {
 							"type": "string"
@@ -140,18 +104,9 @@
 						}
 					},
 					"day_5": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
-						},
-						"interaction_id": {
-							"type": "number"
 						},
 						"recorded_type": {
 							"type": "string"
@@ -167,18 +122,9 @@
 						}
 					},
 					"day_6": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
-						},
-						"interaction_id": {
-							"type": "number"
 						},
 						"recorded_type": {
 							"type": "string"
@@ -194,18 +140,9 @@
 						}
 					},
 					"day_7": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
-						},
-						"interaction_id": {
-							"type": "number"
 						},
 						"recorded_type": {
 							"type": "string"
