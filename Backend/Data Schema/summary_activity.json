@@ -32,12 +32,6 @@
 				"days": {
 					"type": "object",
 					"day_1": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
@@ -59,12 +53,6 @@
 						}
 					},
 					"day_2": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
@@ -86,12 +74,6 @@
 						}
 					},
 					"day_3": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
@@ -113,12 +95,6 @@
 						}
 					},
 					"day_4": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
@@ -140,12 +116,6 @@
 						}
 					},
 					"day_5": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
@@ -167,12 +137,6 @@
 						}
 					},
 					"day_6": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
@@ -194,12 +158,6 @@
 						}
 					},
 					"day_7": {
-						"id": {
-							"type": "number"
-						},
-						"device_id": {
-							"type": "number"
-						},
 						"interaction_date_time": {
 							"type": "string",
 							"format": "date-time"
