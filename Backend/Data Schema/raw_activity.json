@@ -14,7 +14,7 @@
     "interaction_id": {
       "type": "number"
     },
-    "recorded_type": {
+    "record_type": {
       "type": "string"
     }
   },
@@ -22,10 +22,10 @@
     "device_id",
     "date_time",
     "interaction_id",
-    "recorded_type"
+    "record_type"
   ],
   "dependencies": {
-    "recorded_type": {
+    "record_type": {
       "properties": {
         "data_type": {
           "type": "string"
