@@ -47,5 +47,5 @@
 * The valid json file is located in the ``/test/test_summary_activity.json``
 * If you want to take a look at more days, look at this image ``/img/extension_summary_activity.png``
 <p align = "center">
-  <img src="./img/test_summary_activity.PNG" width = "600" height = "380" >
+  <img src="./img/summary_activity.png" width = "600" height = "380" >
 </p>
