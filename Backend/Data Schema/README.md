@@ -3,7 +3,7 @@
 2. Raw Activity Schema that has depedency with data_type, quality and quantity (raw_activity.json)
 ----
 **Basic Description :** 
-|Feature      |       Id      | Device ID | Interaction_date_time       | Interaction_id | recorded_type             | data type | quanitity | quality |
+|Feature      |       Id      | Device ID | Interaction_date_time       | Interaction_id | record_type             | data type | quanitity | quality |
 | ---         |      ---      | ---       | ---                         |      ---       |   ---                     | ---       | ---       | ---     |
 | Description | Object ID     | Device ID | Date and time that recorded | Caregiver ID   | activity, health, symptom | waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
 | Type        | string       | string | string | string(can be number) | string | string | number or string | string|
@@ -21,15 +21,15 @@
 ----
 
 **1. Basic Description(simple_summary_activity):**
-|Feature      |       Id      | Device ID | Summary_date_time       | Interaction_id | recorded_type             | data  | data.data_type | data.average_quanitity | data.average_quality |
+|Feature      |       Id      | Device ID | Summary_date_time       | Interaction_id | record_type             | data  | data.data_type | data.average_quanitity | data.average_quality |
 | ---         |      ---      | ---       | ---                     |      ---       |   ---                     | ---       | ---       | ---     | --- |
 | Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | *_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything 
 | Type        | string       | string | string | string(can be number) | string | dict | string | number or string | string|
 
 **2. Basic Description(summary_activity):**
-|Feature      |       Id      | Device ID | Summary_date_time       | Interaction_id | recorded_type             | data  | data.data_type | data.average_quanitity | data.average_quality | data.days.day_1.DeviceID | data.days.day_1.interaction_date_time | data.days.day_1.interaction_id | data.days.day_1.data_type | data.days.day_1.quanitity | data.days.day_1.quality |
-| ---         |      ---      | ---       | ---                     |      ---       |   ---                     | ---       | ---       | ---     | --- | --- | --- | --- | --- | --- | --- |
-| Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | *_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything ex : good | device ID | interaction date time | interaction ID | walking, sleeping.. | miles, hours ... | can be anything |
+|Feature      |       Id      | Device ID | Summary_date_time       | Interaction_id | record_type             | data  | data.data_type | data.average_quanitity | data.average_quality  | data.days.day_1.interaction_date_time | data.days.day_1.interaction_id | data.days.day_1.data_type | data.days.day_1.quanitity | data.days.day_1.quality |
+| ---         |      ---      | ---                     |      ---       |   ---                     | ---       | ---       | ---     | --- | --- | --- | --- | --- | --- | --- |
+| Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | *_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything ex : good | interaction date time | interaction ID | walking, sleeping.. | miles, hours ... | can be anything |
 | Type        | string       | string | string | string(can be number) | string | dict | string | number or string | string| number | string | number | string | number or string | string |
 
 **Note :**
