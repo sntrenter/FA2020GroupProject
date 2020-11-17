@@ -14,7 +14,7 @@
 		"interaction_id": {
 			"type": "number"
 		},
-		"recorded_type": {
+		"record_type": {
 			"type": "string"
 		},
 		"data_type": {
@@ -31,6 +31,6 @@
 		"device_id",
 		"date_time",
 		"interaction_id",
-		"recorded_type"
+		"record_type"
 	]
 }
