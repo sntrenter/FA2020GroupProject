@@ -45,7 +45,6 @@
 ### Testing Summary Activity Database Schema for ``summary_activity.json``
 * The chart can be drawn by using this [Awesome-JSON-Viewer](https://github.com/rbrahul/Awesome-JSON-Viewer)
 * The valid json file is located in the ``/test/test_summary_activity.json``
-* If you want to take a look at more days, look at this image ``/img/extension_summary_activity.png``
 <p align = "center">
   <img src="./img/summary_activity.png" width = "600" height = "380" >
 </p>
