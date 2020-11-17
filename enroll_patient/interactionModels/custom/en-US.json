@@ -1,0 +1,292 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "enroll patient",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CapturePatientIdIntent",
+          "slots": [
+            {
+              "name": "patient_id",
+              "type": "alphanumeric",
+              "samples": [
+                "Entering {patient_id}",
+                "Enrolling {patient_id}",
+                "{patient_id}",
+                "Patient ID is {patient_id}",
+                "The ID is {patient_id}"
+              ],
+              "multipleValues": {
+                "enabled": true
+              }
+            }
+          ],
+          "samples": [
+            "Enrolling {patient_id}",
+            "Entering {patient_id}",
+            "Patient ID {patient_id}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "a"
+              }
+            },
+            {
+              "name": {
+                "value": "b"
+              }
+            },
+            {
+              "name": {
+                "value": "c"
+              }
+            },
+            {
+              "name": {
+                "value": "d"
+              }
+            },
+            {
+              "name": {
+                "value": "e"
+              }
+            },
+            {
+              "name": {
+                "value": "f"
+              }
+            },
+            {
+              "name": {
+                "value": "g"
+              }
+            },
+            {
+              "name": {
+                "value": "h"
+              }
+            },
+            {
+              "name": {
+                "value": "i"
+              }
+            },
+            {
+              "name": {
+                "value": "j"
+              }
+            },
+            {
+              "name": {
+                "value": "k"
+              }
+            },
+            {
+              "name": {
+                "value": "l"
+              }
+            },
+            {
+              "name": {
+                "value": "m"
+              }
+            },
+            {
+              "name": {
+                "value": "n"
+              }
+            },
+            {
+              "name": {
+                "value": "o"
+              }
+            },
+            {
+              "name": {
+                "value": "p"
+              }
+            },
+            {
+              "name": {
+                "value": "q"
+              }
+            },
+            {
+              "name": {
+                "value": "r"
+              }
+            },
+            {
+              "name": {
+                "value": "s"
+              }
+            },
+            {
+              "name": {
+                "value": "t"
+              }
+            },
+            {
+              "name": {
+                "value": "u"
+              }
+            },
+            {
+              "name": {
+                "value": "v"
+              }
+            },
+            {
+              "name": {
+                "value": "w"
+              }
+            },
+            {
+              "name": {
+                "value": "x"
+              }
+            },
+            {
+              "name": {
+                "value": "y"
+              }
+            },
+            {
+              "name": {
+                "value": "z"
+              }
+            },
+            {
+              "name": {
+                "value": "1"
+              }
+            },
+            {
+              "name": {
+                "value": "2"
+              }
+            },
+            {
+              "name": {
+                "value": "3"
+              }
+            },
+            {
+              "name": {
+                "value": "4"
+              }
+            },
+            {
+              "name": {
+                "value": "5"
+              }
+            },
+            {
+              "name": {
+                "value": "6"
+              }
+            },
+            {
+              "name": {
+                "value": "7"
+              }
+            },
+            {
+              "name": {
+                "value": "8"
+              }
+            },
+            {
+              "name": {
+                "value": "9"
+              }
+            },
+            {
+              "name": {
+                "value": "0"
+              }
+            }
+          ],
+          "name": "alphanumeric"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CapturePatientIdIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "patient_id",
+              "type": "alphanumeric",
+              "elicitationRequired": true,
+              "confirmationRequired": true,
+              "prompts": {
+                "confirmation": "Confirm.Slot.1442970682769.767654017165",
+                "elicitation": "Elicit.Slot.1442970682769.767654017165"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Confirm.Slot.1442970682769.767654017165",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Thanks, I heard {patient_id} , is that correct?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1442970682769.767654017165",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the patient ID?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "9"
+}
