@@ -50,13 +50,33 @@ class CapturePatientIdIntentHandler(AbstractRequestHandler):
         # type: (HandlerInput) -> Response
         
         slots = handler_input.request_envelope.request.intent.slots
+        chars_to_remove = ['.', ',', ' ']
+        help_dict = { 
+            'one': '1', 
+            'two': '2', 
+            'three': '3', 
+            'four': '4', 
+            'five': '5', 
+            'six': '6', 
+            'seven': '7', 
+            'eight': '8', 
+            'nine': '9', 
+            'zero' : '0'
+        } 
         patient_id = slots["patient_id"].value
+        for key in help_dict.keys():
+            patient_id = patient_id.replace(key, help_dict[key])
+        patient_id = patient_id.upper()
+        for char in chars_to_remove:
+            patient_id = patient_id.replace(char, '')
         sys_object = handler_input.request_envelope.context.system
         device_id = sys_object.device.device_id
         params = {"patient_id":patient_id, "device_id":device_id}
-        r = requests.post(url="https://cs5500-healthcare.herokuapp.com/v1/patient/register", data=json.dumps(params), headers={'Content-Type':'application/json'})
+        request_url = "https://cs5500-healthcare.herokuapp.com/v1/patient/update/{0}".format(patient_id)
         
-        speak_output = "Thank you for the patient ID."
+        r = requests.put(url=request_url, data=json.dumps(params), headers={'Content-Type':'application/json'})
+        
+        speak_output = "Thank you for the patient ID {0}".format(patient_id)
 
         return (
             handler_input.response_builder

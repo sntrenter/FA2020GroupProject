@@ -5,6 +5,7 @@ import {
   makeStyles
 } from '@material-ui/core';
 import Page from '../../../components/Page';
+import PatientForm from "../../../components/PatientForm";
 import Messages from './Messages';
 import LineGraph from './LineGraph';
 import BarGraph from './BarGraph';
@@ -88,6 +89,15 @@ const Dashboard = () => {
           >
             <Messages />
           </Grid>
+        </Grid>
+        <Grid
+            item
+            lg={4}
+            md={6}
+            xl={3}
+            xs={12}
+        >
+          <PatientForm />
         </Grid>
       </Container>
     </Page>

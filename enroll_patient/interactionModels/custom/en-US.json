@@ -38,6 +38,9 @@
             }
           ],
           "samples": [
+            "registering {patient_id}",
+            "register {patient_id}",
+            "enroll {patient_id}",
             "Enrolling {patient_id}",
             "Entering {patient_id}",
             "Patient ID {patient_id}"
@@ -48,181 +51,217 @@
         {
           "values": [
             {
+              "id": "a",
               "name": {
                 "value": "a"
               }
             },
             {
+              "id": "b",
               "name": {
                 "value": "b"
               }
             },
             {
+              "id": "c",
               "name": {
                 "value": "c"
               }
             },
             {
+              "id": "d",
               "name": {
                 "value": "d"
               }
             },
             {
+              "id": "e",
               "name": {
                 "value": "e"
               }
             },
             {
+              "id": "f",
               "name": {
                 "value": "f"
               }
             },
             {
+              "id": "g",
               "name": {
                 "value": "g"
               }
             },
             {
+              "id": "h",
               "name": {
                 "value": "h"
               }
             },
             {
+              "id": "i",
               "name": {
                 "value": "i"
               }
             },
             {
+              "id": "j",
               "name": {
                 "value": "j"
               }
             },
             {
+              "id": "k",
               "name": {
                 "value": "k"
               }
             },
             {
+              "id": "l",
               "name": {
                 "value": "l"
               }
             },
             {
+              "id": "m",
               "name": {
                 "value": "m"
               }
             },
             {
+              "id": "n",
               "name": {
                 "value": "n"
               }
             },
             {
+              "id": "o",
               "name": {
                 "value": "o"
               }
             },
             {
+              "id": "p",
               "name": {
                 "value": "p"
               }
             },
             {
+              "id": "q",
               "name": {
                 "value": "q"
               }
             },
             {
+              "id": "r",
               "name": {
                 "value": "r"
               }
             },
             {
+              "id": "s",
               "name": {
                 "value": "s"
               }
             },
             {
+              "id": "t",
               "name": {
                 "value": "t"
               }
             },
             {
+              "id": "u",
               "name": {
                 "value": "u"
               }
             },
             {
+              "id": "v",
               "name": {
                 "value": "v"
               }
             },
             {
+              "id": "w",
               "name": {
                 "value": "w"
               }
             },
             {
+              "id": "x",
               "name": {
                 "value": "x"
               }
             },
             {
+              "id": "y",
               "name": {
                 "value": "y"
               }
             },
             {
+              "id": "z",
               "name": {
                 "value": "z"
               }
             },
             {
+              "id": "1",
               "name": {
                 "value": "1"
               }
             },
             {
+              "id": "2",
               "name": {
                 "value": "2"
               }
             },
             {
+              "id": "3",
               "name": {
                 "value": "3"
               }
             },
             {
+              "id": "4",
               "name": {
                 "value": "4"
               }
             },
             {
+              "id": "5",
               "name": {
                 "value": "5"
               }
             },
             {
+              "id": "6",
               "name": {
                 "value": "6"
               }
             },
             {
+              "id": "7",
               "name": {
                 "value": "7"
               }
             },
             {
+              "id": "8",
               "name": {
                 "value": "8"
               }
             },
             {
+              "id": "9",
               "name": {
                 "value": "9"
               }
             },
             {
+              "id": "0",
               "name": {
                 "value": "0"
               }
@@ -275,5 +314,5 @@
       }
     ]
   },
-  "version": "10"
+  "version": "13"
 }
