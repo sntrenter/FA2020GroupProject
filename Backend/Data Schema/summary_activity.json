@@ -14,10 +14,10 @@
 			"type": "string",
 			"format": "date-time"
 		},
-		"record_type": {
+		"summary_type": {
 			"type": "string"
 		},
-		"data": {
+		"summary_data": {
 			"type": "object",
 			"properties": {
 				"data_type": {
@@ -29,16 +29,9 @@
 				"average_quality": {
 					"type": "string"
 				},
-				"days": {
+				"daily": {
 					"type": "object",
 					"day_1": {
-						"interaction_date_time": {
-							"type": "string",
-							"format": "date-time"
-						},
-						"record_type": {
-							"type": "string"
-						},
 						"data_type": {
 							"type": "string"
 						},
@@ -50,13 +43,6 @@
 						}
 					},
 					"day_2": {
-						"interaction_date_time": {
-							"type": "string",
-							"format": "date-time"
-						},
-						"record_type": {
-							"type": "string"
-						},
 						"data_type": {
 							"type": "string"
 						},
@@ -68,13 +54,6 @@
 						}
 					},
 					"day_3": {
-						"interaction_date_time": {
-							"type": "string",
-							"format": "date-time"
-						},
-						"record_type": {
-							"type": "string"
-						},
 						"data_type": {
 							"type": "string"
 						},
@@ -86,13 +65,6 @@
 						}
 					},
 					"day_4": {
-						"interaction_date_time": {
-							"type": "string",
-							"format": "date-time"
-						},
-						"record_type": {
-							"type": "string"
-						},
 						"data_type": {
 							"type": "string"
 						},
@@ -104,13 +76,6 @@
 						}
 					},
 					"day_5": {
-						"interaction_date_time": {
-							"type": "string",
-							"format": "date-time"
-						},
-						"record_type": {
-							"type": "string"
-						},
 						"data_type": {
 							"type": "string"
 						},
@@ -122,13 +87,6 @@
 						}
 					},
 					"day_6": {
-						"interaction_date_time": {
-							"type": "string",
-							"format": "date-time"
-						},
-						"record_type": {
-							"type": "string"
-						},
 						"data_type": {
 							"type": "string"
 						},
@@ -140,13 +98,6 @@
 						}
 					},
 					"day_7": {
-						"interaction_date_time": {
-							"type": "string",
-							"format": "date-time"
-						},
-						"record_type": {
-							"type": "string"
-						},
 						"data_type": {
 							"type": "string"
 						},
