@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.js": "/app/dashboard/static/js/main.65569fc6.chunk.js",
-    "main.js.map": "/app/dashboard/static/js/main.65569fc6.chunk.js.map",
-    "runtime-main.js": "/app/dashboard/static/js/runtime-main.d9c99f6b.js",
-    "runtime-main.js.map": "/app/dashboard/static/js/runtime-main.d9c99f6b.js.map",
-    "static/css/2.18fb2ca0.chunk.css": "/app/dashboard/static/css/2.18fb2ca0.chunk.css",
-    "static/js/2.b0c49681.chunk.js": "/app/dashboard/static/js/2.b0c49681.chunk.js",
-    "static/js/2.b0c49681.chunk.js.map": "/app/dashboard/static/js/2.b0c49681.chunk.js.map",
-    "index.html": "/app/dashboard/index.html",
-    "precache-manifest.913f2b7d313ea9b641b1db39985ce817.js": "/app/dashboard/precache-manifest.913f2b7d313ea9b641b1db39985ce817.js",
-    "service-worker.js": "/app/dashboard/service-worker.js",
-    "static/css/2.18fb2ca0.chunk.css.map": "/app/dashboard/static/css/2.18fb2ca0.chunk.css.map",
-    "static/js/2.b0c49681.chunk.js.LICENSE.txt": "/app/dashboard/static/js/2.b0c49681.chunk.js.LICENSE.txt"
+    "main.js": "/FA2020GroupProject/static/js/main.65569fc6.chunk.js",
+    "main.js.map": "/FA2020GroupProject/static/js/main.65569fc6.chunk.js.map",
+    "runtime-main.js": "/FA2020GroupProject/static/js/runtime-main.3bf027e6.js",
+    "runtime-main.js.map": "/FA2020GroupProject/static/js/runtime-main.3bf027e6.js.map",
+    "static/css/2.18fb2ca0.chunk.css": "/FA2020GroupProject/static/css/2.18fb2ca0.chunk.css",
+    "static/js/2.a6d06284.chunk.js": "/FA2020GroupProject/static/js/2.a6d06284.chunk.js",
+    "static/js/2.a6d06284.chunk.js.map": "/FA2020GroupProject/static/js/2.a6d06284.chunk.js.map",
+    "index.html": "/FA2020GroupProject/index.html",
+    "precache-manifest.92121714ae5b86c3d0f7f1e05e1c94f0.js": "/FA2020GroupProject/precache-manifest.92121714ae5b86c3d0f7f1e05e1c94f0.js",
+    "service-worker.js": "/FA2020GroupProject/service-worker.js",
+    "static/css/2.18fb2ca0.chunk.css.map": "/FA2020GroupProject/static/css/2.18fb2ca0.chunk.css.map",
+    "static/js/2.a6d06284.chunk.js.LICENSE.txt": "/FA2020GroupProject/static/js/2.a6d06284.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d9c99f6b.js",
+    "static/js/runtime-main.3bf027e6.js",
     "static/css/2.18fb2ca0.chunk.css",
-    "static/js/2.b0c49681.chunk.js",
+    "static/js/2.a6d06284.chunk.js",
     "static/js/main.65569fc6.chunk.js"
   ]
 }
