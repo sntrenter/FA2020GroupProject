@@ -31,7 +31,9 @@ class PatientForm extends React.Component {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(this.state, null, 2)
         };
-        fetch('http://cs5500-healthcare.herokuapp.com/v1/patient/register', requestOptions)
+        const proxy = "https://cors-anywhere.herokuapp.com/";
+        const url = "http://cs5500-healthcare.herokuapp.com/v1/patient/register";
+        fetch(proxy + url, requestOptions)
             .then(response => response.json())
             .then(data => this.setState({ patient_id: data.response.patient_id }));
         event.preventDefault();
