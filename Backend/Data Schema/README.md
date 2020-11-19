@@ -27,10 +27,10 @@
 | Type        | string       | string | string | string(can be number) | string | dict | string | number or string | string|
 
 **2. Basic Description(summary_activity):**
-|Feature      |       Id      | Device ID | Summary_date_time       | Interaction_id | record_type             | data  | data.data_type | data.average_quanitity | data.average_quality  |  data.days.day_1.data_type | data.days.day_1.quanitity | data.days.day_1.quality |
-| ---         |      ---      | ---       | ---       | ---     | --- | --- | --- | --- | --- | --- |
+|Feature      |       Id      | Device ID | Summary_date_time | Interaction_id | record_type | data  | data.data_type | data.average_quanitity | data.average_quality  |  data.days.day_1.data_type | data.days.day_1.quanitity | data.days.day_1.quality |
+| ---         |      ---      | ---       | ---       | ---     | --- | --- | --- | --- | --- | --- | --- | --- |
 | Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | *_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything ex : good | walking, sleeping.. | miles, hours ... | can be anything |
-| Type        | string   | string(can be number) | string | dict | string | number or string | string | string | number or string | string |
+| Type        | string   | string(can be number) | string | string | string | dict | string | number or string | string | string | number or string | string |
 
 **Note :**
 1. Data is dictionary that stores data type, average quantity, average quality, and days(dictionary).
