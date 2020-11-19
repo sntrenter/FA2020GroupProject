@@ -15,8 +15,9 @@ const App = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      
+     
       <DashboardLayout />
+      
       {routing}
     </ThemeProvider>
       
