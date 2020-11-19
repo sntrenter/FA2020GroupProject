@@ -46,5 +46,5 @@
 * The chart can be drawn by using this [Awesome-JSON-Viewer](https://github.com/rbrahul/Awesome-JSON-Viewer)
 * The valid json file is located in the ``/test/test_summary_activity.json``
 <p align = "center">
-  <img src="./img/summary_activity.png" width = "600" height = "380" >
+  <img src="./img/new_summary_activity.png" width = "600" height = "380" >
 </p>
