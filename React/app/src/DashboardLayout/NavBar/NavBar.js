@@ -25,6 +25,16 @@ const items = [
   {
     href: '/app/dashboard',
     icon: PermIdentityIcon,
+    title: 'Demo Patient 1'
+  },
+  {
+    href: '/app/dashboard',
+    icon: PermIdentityIcon,
+    title: 'Demo Patient 2'
+  },
+  {
+    href: '/app/dashboard',
+    icon: PermIdentityIcon,
     title: 'John Patient'
   },
   {
