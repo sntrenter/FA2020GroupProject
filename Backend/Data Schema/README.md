@@ -28,8 +28,8 @@
 
 **2. Basic Description(summary_activity):**
 |Feature      |       Id      | Device ID | Summary_date_time       | Interaction_id | record_type             | data  | data.data_type | data.average_quanitity | data.average_quality  |  data.days.day_1.data_type | data.days.day_1.quanitity | data.days.day_1.quality |
-| ---         |      ---      | ---       | ---       | ---     | --- | --- | --- | --- | --- | --- | --- |
-| Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | *_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything ex : good | interaction date time | interaction ID | walking, sleeping.. | miles, hours ... | can be anything |
+| ---         |      ---      | ---       | ---       | ---     | --- | --- | --- | --- | --- | --- |
+| Description | Object ID     | Device ID | Date and time for summary | Caregiver ID   | *_summary | just dictionary |waking, sleeping,feeling, sleep, fever | miles, hours.. | can be anything ex : good | walking, sleeping.. | miles, hours ... | can be anything |
 | Type        | string   | string(can be number) | string | dict | string | number or string | string| number | string | number | string | number or string | string |
 
 **Note :**
