@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "enroll patient",
+      "invocationName": "register patient",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -27,7 +27,6 @@
               "type": "alphanumeric",
               "samples": [
                 "Entering {patient_id}",
-                "Enrolling {patient_id}",
                 "{patient_id}",
                 "Patient ID is {patient_id}",
                 "The ID is {patient_id}"
@@ -38,11 +37,9 @@
             }
           ],
           "samples": [
+            "register patient {patient_id}",
             "registering {patient_id}",
             "register {patient_id}",
-            "enroll {patient_id}",
-            "Enrolling {patient_id}",
-            "Entering {patient_id}",
             "Patient ID {patient_id}"
           ]
         }
@@ -314,5 +311,5 @@
       }
     ]
   },
-  "version": "13"
+  "version": "14"
 }
