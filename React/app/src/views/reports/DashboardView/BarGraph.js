@@ -25,10 +25,10 @@ const BarGraph = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
-  const url = 'http://cs5500-healthcare.herokuapp.com/v1/summaryactivity';
+  const url = "https://cs5500-healthcare.herokuapp.com/v1/summaryactivity";
 
   
-
+  console.log('testing bar graph');
   let dataArray = [];
   let dates = [];
   const getAverageQuantities = function(promiseResponse) {

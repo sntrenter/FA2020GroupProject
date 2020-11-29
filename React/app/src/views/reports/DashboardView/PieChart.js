@@ -28,9 +28,10 @@ const PieChart = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
-  const url = 'http://cs5500-healthcare.herokuapp.com/v1/summaryactivity';
+  // const proxy = "https://cors-anywhere.herokuapp.com/";
+  const url = "https://cs5500-healthcare.herokuapp.com/v1/summaryactivity";
 
-  
+  // const URL = proxy+url;
 
   let dataArray = [];
   let average_quality_percentages = [];
