@@ -10,6 +10,7 @@ import LineGraph from './LineGraph';
 import BarGraph from './BarGraph';
 import PieChart from './PieChart';
 import Bio from './Bio';
+import Chart from './Chart';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,7 +78,8 @@ const Dashboard = () => {
             xl={3}
             xs={12}
           >
-            <LineGraph />
+            
+            <LineGraph />*
           </Grid>
           <Grid
             item
