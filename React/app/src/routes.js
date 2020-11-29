@@ -20,6 +20,7 @@ const routes = [
     path: '/',
     element: <MainLayout />,
     children: [
+      { path: 'FA2020GroupProject', element: <LoginView /> },
       { path: 'login', element: <LoginView /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <LoginView /> },
