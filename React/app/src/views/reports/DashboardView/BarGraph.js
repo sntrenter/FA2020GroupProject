@@ -15,6 +15,7 @@ import {
 } from '@material-ui/core';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
+import axios from 'axios';
 
 const useStyles = makeStyles(() => ({
   root: {}
@@ -24,21 +25,65 @@ const BarGraph = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
+  const url = 'http://cs5500-healthcare.herokuapp.com/v1/summaryactivity';
+
+  
+
+  let dataArray = [];
+  let dates = [];
+  const getAverageQuantities = function(promiseResponse) {
+      
+      console.log(promiseResponse);
+      for(var key in promiseResponse) {
+        dataArray.push(promiseResponse[key].data.average_quantity);
+        dates.push(promiseResponse[key].date_time);
+      }
+      // pos0 = promiseResponse[0].data.average_quantity;
+      // console.log('pos 0', pos0);
+      console.log('dataArray', dataArray);
+      return dataArray;
+  }
+
+
+
+
+  axios.get(url)
+  .then(response => {
+    const promiseResponse = response.data;
+    return promiseResponse;
+  })
+  .then(getAverageQuantities)
+  .catch(err => {
+    console.log('Error:', err);
+  })
+
+  // console.log(summaryData());
+  
+
+  // async function axiosTest() {
+  //   const response = await axios.get(url)
+  //   return response.data
+  // }
+
+
   const data = {
     datasets: [
       {
         backgroundColor: colors.indigo[500],
-        data: [18, 5, 19, 27, 29, 19, 20],
+        data: dataArray, //[0, 5, 19, 27, 29, 19, 20],
         label: 'This year'
       },
-      {
-        backgroundColor: colors.grey[200],
-        data: [11, 20, 12, 29, 30, 25, 13],
-        label: 'Last year'
-      }
+      // {
+      //   backgroundColor: colors.grey[200],
+      //   data: [11, 20, 12, 29, 30, 25, 13],
+      //   label: 'Last year'
+      // }
     ],
-    labels: ['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug']
+     labels: dates //['1 Aug', '2 Aug', '3 Aug', '4 Aug', '5 Aug', '6 Aug']
   };
+  
+
+  
 
   const options = {
     animation: false,

@@ -16,6 +16,7 @@ import {
 import MoodBadOutlinedIcon from '@material-ui/icons/MoodBadOutlined';
 import MoodOutlinedIcon from '@material-ui/icons/MoodOutlined';
 import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
+import axios from 'axios';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -27,21 +28,83 @@ const PieChart = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
+  const url = 'http://cs5500-healthcare.herokuapp.com/v1/summaryactivity';
+
+  
+
+  let dataArray = [];
+  let average_quality_percentages = [];
+  let well_percent;
+  let test = 18;
+  const getAverageQuantities = function(promiseResponse) {
+      
+      console.log(promiseResponse);
+      for(var key in promiseResponse) {
+        dataArray.push(promiseResponse[key].data.average_quality);
+        // dates.push(promiseResponse[key].date_time);
+      }
+      var well_count = 0; 
+      var bad_count = 0; 
+      var ok_count = 0; 
+      var other_count = 0;
+      for(var i = 0; i < dataArray.length; ++i) {
+        if(dataArray[i] == 'well'){
+          well_count++;
+        }
+        else if(dataArray[i] == 'bad') {
+          bad_count++;
+        }
+        else if(dataArray[i] == 'ok'){
+          ok_count++;
+        }
+        else {
+          other_count++;
+        }
+      }
+
+      average_quality_percentages.push(parseInt(well_count/dataArray.length * 100));
+      average_quality_percentages.push(parseInt(bad_count/dataArray.length * 100));
+      average_quality_percentages.push(parseInt(ok_count/dataArray.length * 100));
+      average_quality_percentages.push(parseInt(other_count/dataArray.length * 100));
+
+      well_percent = parseInt(well_count/dataArray.length * 100);
+      console.log('type of pos 0', typeof(average_quality_percentages[0]));
+      console.log('value at pos 1', average_quality_percentages[1]);
+      
+      // pos0 = promiseResponse[0].data.average_quantity;
+      // console.log('pos 0', pos0);
+      console.log('dataArray in pie', dataArray);
+      return dataArray;
+  }
+
+
+  axios.get(url)
+  .then(response => {
+    const promiseResponse = response.data;
+    return promiseResponse;
+  })
+  .then(getAverageQuantities)
+  .catch(err => {
+    console.log('Error:', err);
+  })
+
+
   const data = {
     datasets: [
       {
-        data: [63, 15, 22],
+        data: average_quality_percentages, //[63, 15, 22],
         backgroundColor: [
           colors.indigo[500],
           colors.red[600],
-          colors.orange[600]
+          colors.orange[600], 
+          colors.grey[600],
         ],
         borderWidth: 8,
         borderColor: colors.common.white,
         hoverBorderColor: colors.common.white
       }
     ],
-    labels: ['Good', 'Bad', 'Ok']
+    labels: ['Well', 'Bad', 'Ok', 'Other']
   };
 
   const options = {
@@ -66,16 +129,28 @@ const PieChart = ({ className, ...rest }) => {
     }
   };
 
-  const devices = [
+  // while(typeof(data.datasets[0].data[0] === undefined)){
+  //   sleep(500);
+  //   console.log('waiting');
+  // }
+
+  console.log('data dataset ', typeof(data.datasets[0].data[0]));
+  setTimeout(500);
+  console.log('data dataset ', typeof(data.datasets[0].data[0]));
+  setTimeout(500);
+  console.log('data dataset ', typeof(data.datasets[0].data[0]));
+  
+  
+  const qualities = [
     {
-      title: 'Good',
-      value: 63,
+      title: 'Well',
+      value: 10,
       icon: MoodOutlinedIcon,
       color: colors.indigo[500]
     },
     {
       title: 'Bad',
-      value: 15,
+      value: test,
       icon: MoodBadOutlinedIcon,
       color: colors.red[600]
     },
@@ -84,7 +159,13 @@ const PieChart = ({ className, ...rest }) => {
       value: 23,
       icon: SentimentSatisfiedOutlinedIcon,
       color: colors.orange[600]
-    }
+    }, 
+    {
+      title: 'Other',
+      value: 23,
+      icon: SentimentSatisfiedOutlinedIcon,
+      color: colors.grey[600]
+    },
   ];
 
   return (
@@ -109,7 +190,7 @@ const PieChart = ({ className, ...rest }) => {
           justifyContent="center"
           mt={2}
         >
-          {devices.map(({
+          {qualities.map(({
             color,
             icon: Icon,
             title,
