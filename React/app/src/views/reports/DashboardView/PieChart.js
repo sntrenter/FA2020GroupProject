@@ -144,25 +144,25 @@ const PieChart = ({ className, ...rest }) => {
   const qualities = [
     {
       title: 'Well',
-      value: 10,
+      value: 93,
       icon: MoodOutlinedIcon,
       color: colors.indigo[500]
     },
     {
       title: 'Bad',
-      value: test,
+      value: 0,
       icon: MoodBadOutlinedIcon,
       color: colors.red[600]
     },
     {
       title: 'Ok',
-      value: 23,
+      value: 0,
       icon: SentimentSatisfiedOutlinedIcon,
       color: colors.orange[600]
     }, 
     {
       title: 'Other',
-      value: 23,
+      value: 6,
       icon: SentimentSatisfiedOutlinedIcon,
       color: colors.grey[600]
     },
