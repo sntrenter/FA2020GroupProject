@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Bar } from 'react-chartjs-2';
@@ -29,15 +29,21 @@ const BarGraph = ({ className, ...rest }) => {
 
   
   console.log('testing bar graph');
-  let dataArray = [];
-  let dates = [];
+  let [dataArray,updatdataArray] = useState([]);
+  let [dates,updatedates] = useState([]);
   const getAverageQuantities = function(promiseResponse) {
       
       console.log(promiseResponse);
+      let newdataArray = [];
+      let newdates = [];
       for(var key in promiseResponse) {
-        dataArray.push(promiseResponse[key].data.average_quantity);
-        dates.push(promiseResponse[key].date_time);
+        newdataArray.push(promiseResponse[key].data.average_quantity);
+        newdates.push(promiseResponse[key].date_time);
       }
+      updatdataArray(newdataArray)
+      updatedates(newdates)
+      console.log("TESTTTTTTTTTTT",dataArray)
+      console.log(dates)
       // pos0 = promiseResponse[0].data.average_quantity;
       // console.log('pos 0', pos0);
       console.log('dataArray', dataArray);
@@ -46,7 +52,7 @@ const BarGraph = ({ className, ...rest }) => {
 
 
 
-
+useEffect(()=>{
   axios.get(url)
   .then(response => {
     const promiseResponse = response.data;
@@ -56,6 +62,8 @@ const BarGraph = ({ className, ...rest }) => {
   .catch(err => {
     console.log('Error:', err);
   })
+},[]);
+
 
   // console.log(summaryData());
   
