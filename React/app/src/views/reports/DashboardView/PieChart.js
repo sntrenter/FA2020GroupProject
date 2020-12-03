@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { Doughnut } from 'react-chartjs-2';
@@ -28,19 +28,24 @@ const PieChart = ({ className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
+
+
   // const proxy = "https://cors-anywhere.herokuapp.com/";
   const url = "https://cs5500-healthcare.herokuapp.com/v1/summaryactivity";
 
   // const URL = proxy+url;
 
   let dataArray = [];
-  let average_quality_percentages = [];
+  //let [dataArray,updatdataArray] = useState([]);
+  //let average_quality_percentages = [];
+  let [average_quality_percentages,updateaverage_quality_percentages] = useState([]);
   let well_percent;
   let test = 18;
   const getAverageQuantities = function(promiseResponse) {
       
       console.log(promiseResponse);
       for(var key in promiseResponse) {
+        
         dataArray.push(promiseResponse[key].data.average_quality);
         // dates.push(promiseResponse[key].date_time);
       }
@@ -62,11 +67,12 @@ const PieChart = ({ className, ...rest }) => {
           other_count++;
         }
       }
-
-      average_quality_percentages.push(parseInt(well_count/dataArray.length * 100));
-      average_quality_percentages.push(parseInt(bad_count/dataArray.length * 100));
-      average_quality_percentages.push(parseInt(ok_count/dataArray.length * 100));
-      average_quality_percentages.push(parseInt(other_count/dataArray.length * 100));
+      let newaverage_quality_percentages = []
+      newaverage_quality_percentages.push(parseInt(well_count/dataArray.length * 100));
+      newaverage_quality_percentages.push(parseInt(bad_count/dataArray.length * 100));
+      newaverage_quality_percentages.push(parseInt(ok_count/dataArray.length * 100));
+      newaverage_quality_percentages.push(parseInt(other_count/dataArray.length * 100));
+      updateaverage_quality_percentages(newaverage_quality_percentages);
 
       well_percent = parseInt(well_count/dataArray.length * 100);
       console.log('type of pos 0', typeof(average_quality_percentages[0]));
@@ -78,16 +84,17 @@ const PieChart = ({ className, ...rest }) => {
       return dataArray;
   }
 
-
-  axios.get(url)
-  .then(response => {
-    const promiseResponse = response.data;
-    return promiseResponse;
-  })
-  .then(getAverageQuantities)
-  .catch(err => {
-    console.log('Error:', err);
-  })
+  useEffect(()=>{
+    axios.get(url)
+    .then(response => {
+      const promiseResponse = response.data;
+      return promiseResponse;
+    })
+    .then(getAverageQuantities)
+    .catch(err => {
+      console.log('Error:', err);
+    })
+  },[]);
 
 
   const data = {

@@ -42,11 +42,6 @@ const BarGraph = ({ className, ...rest }) => {
       }
       updatdataArray(newdataArray)
       updatedates(newdates)
-      console.log("TESTTTTTTTTTTT",dataArray)
-      console.log(dates)
-      // pos0 = promiseResponse[0].data.average_quantity;
-      // console.log('pos 0', pos0);
-      console.log('dataArray', dataArray);
       return dataArray;
   }
 
