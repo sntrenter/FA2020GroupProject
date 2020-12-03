@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useState, useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
@@ -15,6 +15,7 @@ import {
 } from '@material-ui/core';
 
 import NavItem from './NavItem';
+import axios from 'axios';
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
@@ -74,6 +75,45 @@ const useStyles = makeStyles(() => ({
 const NavBar = ({ onMobileClose, openMobile }) => {
   const classes = useStyles();
   const location = useLocation();
+  let [names,updatenames] = useState([]);
+  let url = "https://cs5500-healthcare.herokuapp.com/v1/patients";
+ 
+  useEffect(()=>{
+    axios.get(url)
+    .then(response => {
+      const promiseResponse = response.data;
+      return promiseResponse;
+    })
+    .then(formateNames)
+    .catch(err => {
+      console.log('Error:', err);
+    })
+  },[]);
+ 
+ function formateNames(data){
+  console.log("########################funciton called")  ;
+  console.log(data);
+  let people = [];
+  //{
+  //  href: '/app/dashboard',
+  //  icon: PermIdentityIcon,
+  //  title: 'Jerry Patient'
+  //}
+  for(let i = 0; i < data.length;i ++)
+  {
+    people.push(
+      {
+        href: '/app/dashboard',
+        icon: PermIdentityIcon,
+        title: data[i]["name"]
+      }
+    );
+  }
+
+  console.log(people);
+  updatenames(people);
+ }
+
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
@@ -117,7 +157,7 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       <Divider />
       <Box p={2}>
         <List>
-          {items.map((item) => (
+          {names.map((item) => (
             <NavItem
               href={item.href}
               key={item.title}
