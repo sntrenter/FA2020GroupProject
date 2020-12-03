@@ -32,7 +32,7 @@ class PatientForm extends React.Component {
     }
 
     handleSubmit(event) {
-        axios.post('http://cs5500-healthcare.herokuapp.com/v1/patient/register', this.state)
+        axios.post('https://cs5500-healthcare.herokuapp.com/v1/patient/register', this.state)
             .then((response) => {
                 this.setState({patient_id: response.data.response.patient_id})
             })
