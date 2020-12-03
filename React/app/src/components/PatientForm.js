@@ -1,7 +1,13 @@
-import React from 'react';
-//import { Formik, Field, Form, useField, useFormikContext  } from 'formik';
+import React, {useState} from 'react';
+import axios from 'axios';
+import {
+    TextField,
+    Button,
+    Typography
+} from '@material-ui/core'
 
 class PatientForm extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -26,16 +32,13 @@ class PatientForm extends React.Component {
     }
 
     handleSubmit(event) {
-        const requestOptions = {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(this.state, null, 2)
-        };
-        const proxy = "https://cors-anywhere.herokuapp.com/";
-        const url = "http://cs5500-healthcare.herokuapp.com/v1/patient/register";
-        fetch(proxy + url, requestOptions)
-            .then(response => response.json())
-            .then(data => this.setState({ patient_id: data.response.patient_id }));
+        axios.post('http://cs5500-healthcare.herokuapp.com/v1/patient/register', this.state)
+            .then((response) => {
+                this.setState({patient_id: response.data.response.patient_id})
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
         event.preventDefault();
     }
 
@@ -50,35 +53,36 @@ class PatientForm extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    Name
-                </label><br/>
-                <input
-                    name="name"
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.handleInputChange} /><br/>
-                <label>
-                    Gender
-                </label><br/>
-                <input
+                    <TextField
+                        id="name"
+                        name="name"
+                        label="Patient Name"
+                        fullWidth
+                        required
+                        value={this.state.value}
+                        onChange={this.handleInputChange}
+                    /><br/>
+                <TextField
+                    id="gender"
                     name="gender"
-                    type="text"
+                    label="Patient Gender"
+                    fullWidth
                     value={this.state.value}
-                    onChange={this.handleInputChange} /><br/>
-                <label>
+                    onChange={this.handleInputChange}
+                /><br/>
+                <Typography variant="body1">
                     Date of birth
-                </label><br/>
+                </Typography>
                 <input
                     name="dob"
                     type="date"
                     value={this.state.value}
                     placeholder="yyyy-mm-dd"
                     onChange={this.handleInputChange} /><br/>
-                <input type="submit" value="Submit" /><br/>
-                <label>
+                <Button type="submit" value="Submit" >Add Patient</Button><br/>
+                <Typography variant="body1">
                     Patient ID: {this.patientID()}
-                </label>
+                </Typography>
             </form>
         )
     }

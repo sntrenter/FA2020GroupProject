@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+import Add from '@material-ui/icons/Add'
 import {
   Avatar,
   Box,
@@ -22,6 +23,11 @@ const user = {
 };
 
 const items = [
+  {
+    href: 'app/dashboard',
+    icon: Add,
+    title: 'Add New Patient'
+  },
   {
     href: '/app/dashboard',
     icon: PermIdentityIcon,

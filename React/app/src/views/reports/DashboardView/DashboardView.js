@@ -78,7 +78,7 @@ const Dashboard = () => {
             xl={3}
             xs={12}
           >
-            <LineGraph />
+            <PatientForm />
           </Grid>
           <Grid
             item
@@ -89,15 +89,6 @@ const Dashboard = () => {
           >
             <Messages />
           </Grid>
-        </Grid>
-        <Grid
-            item
-            lg={4}
-            md={6}
-            xl={3}
-            xs={12}
-        >
-          <PatientForm />
         </Grid>
       </Container>
     </Page>
