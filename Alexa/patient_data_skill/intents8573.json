@@ -1,0 +1,256 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "final presentation zero nine one",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "feelingsIntent",
+                    "slots": [
+                        {
+                            "name": "feelings",
+                            "type": "feelingsType",
+                            "samples": [
+                                "{feelings}",
+                                "I feel {feelings}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{feelings}",
+                        "I feel {feelings}"
+                    ]
+                },
+                {
+                    "name": "symptomIntent",
+                    "slots": [
+                        {
+                            "name": "symptoms",
+                            "type": "symptomType",
+                            "samples": [
+                                "{symptoms}",
+                                "I have {symptoms}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{symptoms}",
+                        "I have {symptoms}"
+                    ]
+                },
+                {
+                    "name": "hoursSleptIntent",
+                    "slots": [
+                        {
+                            "name": "amount",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "I slept {amount} hours",
+                                "{amount} hours",
+                                "{amount}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "I slept maybe {amount} hours",
+                        "only {amount} hours",
+                        "I only slept {amount} hours",
+                        "I slept about {amount} hours",
+                        "I slept around {amount} hours",
+                        "around {amount}",
+                        "about {amount}",
+                        "maybe {amount}",
+                        "about {amount} hours",
+                        "around {amount} hours",
+                        "maybe {amount} hours",
+                        "{amount}",
+                        "{amount} hours",
+                        "I slept {amount} hours"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "feelingsType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "bad"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "good"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "symptomType",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "no symptoms",
+                                "synonyms": [
+                                    "zero symptoms"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "upset stomach",
+                                "synonyms": [
+                                    "stomach flu",
+                                    "an upset stomach"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cold",
+                                "synonyms": [
+                                    "a flu",
+                                    "the flu",
+                                    "flu",
+                                    "a cold"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fever",
+                                "synonyms": [
+                                    "a fever"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "feelingsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "feelings",
+                            "type": "feelingsType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.194192705126.1423823795265"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "symptomIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "symptoms",
+                            "type": "symptomType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.987524269915.79052327456"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "hoursSleptIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "amount",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1357429664156.558727494633"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.194192705126.1423823795265",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How are you feeling?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1048143825734.1500765155924",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How did you sleep?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.230572748961.319744579290",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What symptoms of sickness do you have?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1161055504284.729979286313",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How many meals did you eat today?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.987524269915.79052327456",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What symptoms do you have?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1357429664156.558727494633",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How many hours did you sleep?"
+                    }
+                ]
+            }
+        ]
+    }
+}
