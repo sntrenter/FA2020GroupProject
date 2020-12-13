@@ -1,4 +1,4 @@
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link as RouterLink, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
@@ -75,44 +75,48 @@ const useStyles = makeStyles(() => ({
 const NavBar = ({ onMobileClose, openMobile }) => {
   const classes = useStyles();
   const location = useLocation();
-  let [names,updatenames] = useState([]);
+  let [names, updatenames] = useState([]);
   let url = "https://cs5500-healthcare.herokuapp.com/v1/patients";
- 
-  useEffect(()=>{
+
+  useEffect(() => {
     axios.get(url)
-    .then(response => {
-      const promiseResponse = response.data;
-      return promiseResponse;
-    })
-    .then(formateNames)
-    .catch(err => {
-      console.log('Error:', err);
-    })
-  },[]);
- 
- function formateNames(data){
-  console.log("########################funciton called")  ;
-  console.log(data);
-  let people = [];
-  //{
-  //  href: '/app/dashboard',
-  //  icon: PermIdentityIcon,
-  //  title: 'Jerry Patient'
-  //}
-  for(let i = 0; i < data.length;i ++)
-  {
-    people.push(
-      {
-        href: '/app/dashboard',
-        icon: PermIdentityIcon,
-        title: data[i]["name"]
-      }
-    );
+      .then(response => {
+        const promiseResponse = response.data;
+        return promiseResponse;
+      })
+      .then(formateNames)
+      .catch(err => {
+        console.log('Error:', err);
+      })
+  }, []);
+
+  function formateNames(data) {
+    console.log("########################funciton called");
+    console.log(data);
+    let people = [];
+    //{
+    //  href: '/app/dashboard',
+    //  icon: PermIdentityIcon,
+    //  title: 'Jerry Patient'
+    //}
+    for (let i = 0; i < data.length; i++) {
+      people.push(
+        {
+          href: '/app/dashboard',
+          icon: PermIdentityIcon,
+          title: data[i]["name"],
+          id: data[i]["patient_id"]
+        }
+      );
+    }
+
+    console.log(people);
+    updatenames(people);
   }
 
-  console.log(people);
-  updatenames(people);
- }
+function changePatient(id){
+  console.log(id);
+}
 
 
   useEffect(() => {
@@ -157,12 +161,13 @@ const NavBar = ({ onMobileClose, openMobile }) => {
       <Divider />
       <Box p={2}>
         <List>
-          {names.map((item) => (
+          {names.map((item,i) => (
             <NavItem
               href={item.href}
               key={item.title}
               title={item.title}
               icon={item.icon}
+              onClick={() => changePatient(names[i])}
             />
           ))}
         </List>
@@ -173,8 +178,8 @@ const NavBar = ({ onMobileClose, openMobile }) => {
         m={2}
         bgcolor="background.dark"
       >
-       
-        
+
+
       </Box>
     </Box>
   );
@@ -212,7 +217,7 @@ NavBar.propTypes = {
 };
 
 NavBar.defaultProps = {
-  onMobileClose: () => {},
+  onMobileClose: () => { },
   openMobile: false
 };
 
