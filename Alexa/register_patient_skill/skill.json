@@ -26,7 +26,15 @@
       }
     },
     "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "locales": {
+        "en-US": {}
+      }
+    },
     "publishingInformation": {
+      "automaticDistribution": {
+        "isActive": false
+      },
       "category": "KNOWLEDGE_AND_TRIVIA",
       "distributionCountries": [],
       "isAvailableWorldwide": true,
@@ -39,7 +47,7 @@
             "help"
           ],
           "keywords": [],
-          "name": "5500 Enrollment",
+          "name": "5500 Healthcare Patient Registration",
           "summary": "Sample Short Description"
         }
       },

@@ -21,6 +21,10 @@ class PatientForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
+    componentDidMount() {
+        axios.get('')
+    }
+
     handleInputChange(event) {
         const target = event.target
         const value = target.value
