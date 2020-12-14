@@ -31,10 +31,17 @@ def getSpeakOutput(handler_input, response):
     global RESPONSES
     global URL
     global DATETIME
+    if response == False:
+        TURN = TURN - 1
+        if TURN < 0:
+            TURN = 0
+        speakOutput = QUESTIONS[TURN]
+        TURN = TURN + 1
+        return speakOutput
     speakOutput = QUESTIONS[TURN]
     if TURN > 0:
         RESPONSES[TURN-1] = response
-    if TURN == 4:
+    if TURN == len(QUESTIONS) - 1:
         # get device id
         sys_object = handler_input.request_envelope.context.system
         device = sys_object.device.device_id
@@ -53,6 +60,8 @@ class LaunchRequestHandler(AbstractRequestHandler):
 
     def handle(self, handler_input):
         # type: (HandlerInput) -> Response
+        global TURN
+        TURN = 0
         speak_output = getSpeakOutput(handler_input, "")
         return (
             handler_input.response_builder
@@ -73,6 +82,7 @@ class feelingsIntentHandler(AbstractRequestHandler):
         return (
             handler_input.response_builder
                 .speak(speak_output)
+                .ask(speak_output)
                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
@@ -89,6 +99,7 @@ class hoursSleptIntentHandler(AbstractRequestHandler):
         return (
             handler_input.response_builder
                 .speak(speak_output)
+                .ask(speak_output)
                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
@@ -105,6 +116,7 @@ class symptomIntentHandler(AbstractRequestHandler):
         return (
             handler_input.response_builder
                 .speak(speak_output)
+                .ask(speak_output)
                 # .ask("add a reprompt if you want to keep the session open for the user to respond")
                 .response
         )
@@ -158,6 +170,22 @@ class SessionEndedRequestHandler(AbstractRequestHandler):
 
         return handler_input.response_builder.response
 
+class FallbackIntentHandler(AbstractRequestHandler):
+
+    def can_handle(self, handler_input):
+        # type: (HandlerInput) -> bool
+        return ask_utils.is_intent_name("AMAZON.FallbackIntent")(handler_input)
+
+    def handle(self, handler_input):
+        # type: (HandlerInput) -> Response
+        speak_output = getSpeakOutput(False, False)
+        return (
+            handler_input.response_builder
+                .speak(speak_output)
+                .ask(speak_output)
+                # .ask("add a reprompt if you want to keep the session open for the user to respond")
+                .response
+        )        
 
 class IntentReflectorHandler(AbstractRequestHandler):
     """The intent reflector is used for interaction model testing and debugging.
@@ -194,8 +222,8 @@ class CatchAllExceptionHandler(AbstractExceptionHandler):
     def handle(self, handler_input, exception):
         # type: (HandlerInput, Exception) -> Response
         logger.error(exception, exc_info=True)
-
-        speak_output = "Sorry, I had trouble doing what you asked. Please try again."
+        speak_output = getSpeakOutput(False, False)
+        #speak_output = "Sorry, I had trouble doing what you asked. Please try again."
 
         return (
             handler_input.response_builder
@@ -217,6 +245,7 @@ sb.add_request_handler(symptomIntentHandler())
 sb.add_request_handler(HelpIntentHandler())
 sb.add_request_handler(CancelOrStopIntentHandler())
 sb.add_request_handler(SessionEndedRequestHandler())
+sb.add_request_handler(FallbackIntentHandler())
 sb.add_request_handler(IntentReflectorHandler()) # make sure IntentReflectorHandler is last so it doesn't override your custom intent handlers
 
 sb.add_exception_handler(CatchAllExceptionHandler())

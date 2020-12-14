@@ -2,6 +2,11 @@
     "interactionModel": {
         "languageModel": {
             "invocationName": "final presentation zero nine one",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -82,6 +87,10 @@
                         "{amount} hours",
                         "I slept {amount} hours"
                     ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
                 }
             ],
             "types": [
