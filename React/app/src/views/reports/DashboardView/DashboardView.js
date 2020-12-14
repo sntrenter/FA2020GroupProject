@@ -61,7 +61,9 @@ const Dashboard = ({patient,...rest}) => {
             xs={12}
           >
       
-            <BarGraph />
+            <BarGraph
+            patient={patient}
+            />
           </Grid>
           <Grid
             item
@@ -70,7 +72,9 @@ const Dashboard = ({patient,...rest}) => {
             xl={3}
             xs={12}
           >
-            <PieChart />
+            <PieChart 
+            patient={patient}
+            />
           </Grid>
           <Grid
             item

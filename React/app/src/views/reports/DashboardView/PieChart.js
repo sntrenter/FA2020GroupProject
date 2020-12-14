@@ -24,14 +24,17 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const PieChart = ({ className, ...rest }) => {
+const PieChart = ({ patient,className, ...rest }) => {
+
   const classes = useStyles();
   const theme = useTheme();
 
 
 
   // const proxy = "https://cors-anywhere.herokuapp.com/";
-  const url = "https://cs5500-healthcare.herokuapp.com/v1/summaryactivity";
+  //const url = "https://cs5500-healthcare.herokuapp.com/v1/summaryactivity";"https://cs5500-healthcare.herokuapp.com/v1/summaryactivity"
+  let url = patient.id == undefined? false :"https://cs5500-healthcare.herokuapp.com/v1/patient/overview/" + patient.id;
+
 
   // const URL = proxy+url;
 
@@ -39,50 +42,22 @@ const PieChart = ({ className, ...rest }) => {
   //let [dataArray,updatdataArray] = useState([]);
   //let average_quality_percentages = [];
   let [average_quality_percentages,updateaverage_quality_percentages] = useState([]);
+  let [per,updatePercentages] = useState([0,0,0,0]);
   let well_percent;
   let test = 18;
   const getAverageQuantities = function(promiseResponse) {
       
-      console.log(promiseResponse);
-      for(var key in promiseResponse) {
-        
-        dataArray.push(promiseResponse[key].data.average_quality);
-        // dates.push(promiseResponse[key].date_time);
-      }
-      var well_count = 0; 
-      var bad_count = 0; 
-      var ok_count = 0; 
-      var other_count = 0;
-      for(var i = 0; i < dataArray.length; ++i) {
-        if(dataArray[i] == 'well'){
-          well_count++;
-        }
-        else if(dataArray[i] == 'bad') {
-          bad_count++;
-        }
-        else if(dataArray[i] == 'ok'){
-          ok_count++;
-        }
-        else {
-          other_count++;
-        }
-      }
-      let newaverage_quality_percentages = []
-      newaverage_quality_percentages.push(parseInt(well_count/dataArray.length * 100));
-      newaverage_quality_percentages.push(parseInt(bad_count/dataArray.length * 100));
-      newaverage_quality_percentages.push(parseInt(ok_count/dataArray.length * 100));
-      newaverage_quality_percentages.push(parseInt(other_count/dataArray.length * 100));
-      updateaverage_quality_percentages(newaverage_quality_percentages);
-
-      well_percent = parseInt(well_count/dataArray.length * 100);
-      console.log('type of pos 0', typeof(average_quality_percentages[0]));
-      console.log('value at pos 1', average_quality_percentages[1]);
-      
-      // pos0 = promiseResponse[0].data.average_quantity;
-      // console.log('pos 0', pos0);
-      console.log('dataArray in pie', dataArray);
-      return dataArray;
+      let total = promiseResponse.response.feel.good + promiseResponse.response.feel.bad + promiseResponse.response.feel.ok;
+      let percetages = [
+        promiseResponse.response.feel.good/total *100,
+        promiseResponse.response.feel.bad/total *100,
+        promiseResponse.response.feel.ok/total *100,
+      ]
+      updateaverage_quality_percentages(percetages)
+      updatePercentages(percetages)
+      return percetages;
   }
+
 
   useEffect(()=>{
     axios.get(url)
@@ -94,7 +69,7 @@ const PieChart = ({ className, ...rest }) => {
     .catch(err => {
       console.log('Error:', err);
     })
-  },[]);
+  },[url,per]);
 
 
   const data = {
@@ -149,31 +124,25 @@ const PieChart = ({ className, ...rest }) => {
   console.log('data dataset ', typeof(data.datasets[0].data[0]));
   
   
-  const qualities = [
+  let qualities = [
     {
       title: 'Well',
-      value: 93,
+      value: per[0].toString().match(/\d+\.\d{2}/),//parseInt(per[0]),//93,
       icon: MoodOutlinedIcon,
       color: colors.indigo[500]
     },
     {
       title: 'Bad',
-      value: 0,
+      value: per[1].toString().match(/\d+\.\d{2}/),//parseInt(per[1]),//0,
       icon: MoodBadOutlinedIcon,
       color: colors.red[600]
     },
     {
       title: 'Ok',
-      value: 0,
+      value: per[2].toString().match(/\d+\.\d{2}/),//parseInt(per[2]),//0,
       icon: SentimentSatisfiedOutlinedIcon,
       color: colors.orange[600]
     }, 
-    {
-      title: 'Other',
-      value: 6,
-      icon: SentimentSatisfiedOutlinedIcon,
-      color: colors.grey[600]
-    },
   ];
 
   return (

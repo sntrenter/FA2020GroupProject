@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
   root: {}
 }));
 
-const BarGraph = ({ className, ...rest }) => {
+const BarGraph = ({ patient,className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -31,6 +31,7 @@ const BarGraph = ({ className, ...rest }) => {
   console.log('testing bar graph');
   let [dataArray,updatdataArray] = useState([]);
   let [dates,updatedates] = useState([]);
+  console.log(dates);
   const getAverageQuantities = function(promiseResponse) {
       
       console.log(promiseResponse);
