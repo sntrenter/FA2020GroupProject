@@ -42,6 +42,10 @@
             "register {patient_id}",
             "Patient ID {patient_id}"
           ]
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
         }
       ],
       "types": [
@@ -266,7 +270,12 @@
           ],
           "name": "alphanumeric"
         }
-      ]
+      ],
+      "modelConfiguration": {
+        "fallbackIntentSensitivity": {
+          "level": "HIGH"
+        }
+      }
     },
     "dialog": {
       "intents": [
@@ -311,5 +320,5 @@
       }
     ]
   },
-  "version": "14"
+  "version": "19"
 }

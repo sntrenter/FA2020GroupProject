@@ -1,7 +1,12 @@
 {
     "interactionModel": {
         "languageModel": {
-            "invocationName": "intents eight five seven three",
+            "invocationName": "final presentation zero nine one",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
             "intents": [
                 {
                     "name": "AMAZON.CancelIntent",
@@ -16,19 +21,6 @@
                     "samples": []
                 },
                 {
-                    "name": "HelloWorldIntent",
-                    "slots": [],
-                    "samples": [
-                        "hello",
-                        "how are you",
-                        "say hi world",
-                        "say hi",
-                        "hi",
-                        "say hello world",
-                        "say hello"
-                    ]
-                },
-                {
                     "name": "AMAZON.NavigateHomeIntent",
                     "samples": []
                 },
@@ -39,27 +31,14 @@
                             "name": "feelings",
                             "type": "feelingsType",
                             "samples": [
+                                "{feelings}",
                                 "I feel {feelings}"
                             ]
                         }
                     ],
                     "samples": [
+                        "{feelings}",
                         "I feel {feelings}"
-                    ]
-                },
-                {
-                    "name": "sleepIntent",
-                    "slots": [
-                        {
-                            "name": "sleep",
-                            "type": "sleepType",
-                            "samples": [
-                                "I slept {sleep}"
-                            ]
-                        }
-                    ],
-                    "samples": [
-                        "I slept {sleep}"
                     ]
                 },
                 {
@@ -80,16 +59,38 @@
                     ]
                 },
                 {
-                    "name": "brusqueIntent",
+                    "name": "hoursSleptIntent",
                     "slots": [
                         {
-                            "name": "brusque",
-                            "type": "brusqueType"
+                            "name": "amount",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "I slept {amount} hours",
+                                "{amount} hours",
+                                "{amount}"
+                            ]
                         }
                     ],
                     "samples": [
-                        "{brusque}"
+                        "I slept maybe {amount} hours",
+                        "only {amount} hours",
+                        "I only slept {amount} hours",
+                        "I slept about {amount} hours",
+                        "I slept around {amount} hours",
+                        "around {amount}",
+                        "about {amount}",
+                        "maybe {amount}",
+                        "about {amount} hours",
+                        "around {amount} hours",
+                        "maybe {amount} hours",
+                        "{amount}",
+                        "{amount} hours",
+                        "I slept {amount} hours"
                     ]
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
                 }
             ],
             "types": [
@@ -104,21 +105,6 @@
                         {
                             "name": {
                                 "value": "good"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "sleepType",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "badly"
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "well"
                             }
                         }
                     ]
@@ -163,59 +149,6 @@
                             }
                         }
                     ]
-                },
-                {
-                    "name": "brusqueType",
-                    "values": [
-                        {
-                            "name": {
-                                "value": "bad",
-                                "synonyms": [
-                                    "horribly",
-                                    "horrible",
-                                    "awfully",
-                                    "terribly",
-                                    "terrible",
-                                    "awful",
-                                    "badly"
-                                ]
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "good",
-                                "synonyms": [
-                                    "excellent",
-                                    "fantastic",
-                                    "great",
-                                    "well"
-                                ]
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "no",
-                                "synonyms": [
-                                    "not really",
-                                    "none",
-                                    "nope"
-                                ]
-                            }
-                        },
-                        {
-                            "name": {
-                                "value": "yes",
-                                "synonyms": [
-                                    "kind of",
-                                    "sort of",
-                                    "a little",
-                                    "some",
-                                    "yeah",
-                                    "yep"
-                                ]
-                            }
-                        }
-                    ]
                 }
             ]
         },
@@ -238,22 +171,6 @@
                     ]
                 },
                 {
-                    "name": "sleepIntent",
-                    "confirmationRequired": false,
-                    "prompts": {},
-                    "slots": [
-                        {
-                            "name": "sleep",
-                            "type": "sleepType",
-                            "confirmationRequired": false,
-                            "elicitationRequired": true,
-                            "prompts": {
-                                "elicitation": "Elicit.Slot.1048143825734.1500765155924"
-                            }
-                        }
-                    ]
-                },
-                {
                     "name": "symptomIntent",
                     "confirmationRequired": false,
                     "prompts": {},
@@ -270,16 +187,18 @@
                     ]
                 },
                 {
-                    "name": "brusqueIntent",
+                    "name": "hoursSleptIntent",
                     "confirmationRequired": false,
                     "prompts": {},
                     "slots": [
                         {
-                            "name": "brusque",
-                            "type": "brusqueType",
+                            "name": "amount",
+                            "type": "AMAZON.NUMBER",
                             "confirmationRequired": false,
-                            "elicitationRequired": false,
-                            "prompts": {}
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1357429664156.558727494633"
+                            }
                         }
                     ]
                 }
@@ -329,6 +248,15 @@
                     {
                         "type": "PlainText",
                         "value": "What symptoms do you have?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1357429664156.558727494633",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How many hours did you sleep?"
                     }
                 ]
             }
