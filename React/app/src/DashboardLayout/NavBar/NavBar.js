@@ -106,7 +106,8 @@ const NavBar = ({ onMobileClose, openMobile, parentCallback }) => {
           title: data[i]["name"],
           id: data[i]["patient_id"],
           gender: data[i]["gender"],
-          dob: data[i]["dob"]
+          dob: data[i]["dob"],
+          device_id: data[i]["device_id"]
         }
       );
     }

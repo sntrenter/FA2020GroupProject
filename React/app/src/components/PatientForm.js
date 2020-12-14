@@ -1,10 +1,22 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import {
     TextField,
     Button,
-    Typography
+    Card,
+    CardContent,
+    Typography,
+    withStyles
 } from '@material-ui/core'
+import theme from "../theme/theme";
+
+const styles = theme => ({
+    root: {
+        height: '100%'
+    }
+});
 
 class PatientForm extends React.Component {
 
@@ -14,7 +26,8 @@ class PatientForm extends React.Component {
             name: "",
             gender: "",
             dob: "2020-01-01",
-            patient_id: props.patient?.id
+            patient_id: "",
+            device_id: null
         };
         console.log(this.state.patient_id)
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -30,7 +43,9 @@ class PatientForm extends React.Component {
                 name: this.props.patient?.title,
                 gender: this.props.patient?.gender,
                 dob: this.props.patient?.dob,
-                patient_id: this.props.patient?.id})
+                patient_id: this.props.patient?.id,
+                device_id: this.props.patient?.device_id
+            })
             console.log(this.props.patient?.title)
         }
 
@@ -58,11 +73,11 @@ class PatientForm extends React.Component {
         event.preventDefault();
     }
 
-    patientName(props) {
-        if(this.state.name != null) {
-            return this.state.name
+    alexaIsConnected(props) {
+        if(this.state.device_id != null) {
+            return "✔️  Alexa Connected"
         } else {
-            return ""
+            return "❌  Alexa Not Connected"
         }
     }
 
@@ -75,7 +90,10 @@ class PatientForm extends React.Component {
     }
 
     render() {
+        const { classes } = this.props
         return (
+            <Card className={classes.root}>
+                <CardContent>
             <form onSubmit={this.handleSubmit}>
                     <TextField
                         id="name"
@@ -107,9 +125,18 @@ class PatientForm extends React.Component {
                 <Typography variant="body1">
                     Patient ID: {this.patientID()}
                 </Typography>
+                <Typography variant="body1">
+                    {this.alexaIsConnected()}
+                </Typography>
             </form>
+                </CardContent>
+            </Card>
         )
     }
 }
 
-export default PatientForm;
+PatientForm.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(PatientForm);
