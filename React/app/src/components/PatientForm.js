@@ -1,10 +1,22 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
 import {
     TextField,
     Button,
-    Typography
+    Card,
+    CardContent,
+    Typography,
+    withStyles
 } from '@material-ui/core'
+import theme from "../theme/theme";
+
+const styles = theme => ({
+    root: {
+        height: '100%'
+    }
+});
 
 class PatientForm extends React.Component {
 
@@ -14,16 +26,30 @@ class PatientForm extends React.Component {
             name: "",
             gender: "",
             dob: "2020-01-01",
-            patient_id: ""
+            patient_id: "",
+            device_id: null
         };
-
+        console.log(this.state.patient_id)
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
-        axios.get('')
     }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if (this.props.patient !== prevProps.patient) {
+            this.setState({
+                name: this.props.patient?.title,
+                gender: this.props.patient?.gender,
+                dob: this.props.patient?.dob,
+                patient_id: this.props.patient?.id,
+                device_id: this.props.patient?.device_id
+            })
+            console.log(this.props.patient?.title)
+        }
+
+    }p
 
     handleInputChange(event) {
         const target = event.target
@@ -36,14 +62,23 @@ class PatientForm extends React.Component {
     }
 
     handleSubmit(event) {
-        axios.post('https://cs5500-healthcare.herokuapp.com/v1/patient/register', this.state)
+        let url = 'https://cs5500-healthcare.herokuapp.com/v1/patient/update/' + this.state.patient_id
+        axios.put(url, this.state)
             .then((response) => {
-                this.setState({patient_id: response.data.response.patient_id})
+             //   this.setState({patient_id: response.data.response.patient_id})
             })
             .catch(function (error) {
                 console.log(error);
             })
         event.preventDefault();
+    }
+
+    alexaIsConnected(props) {
+        if(this.state.device_id != null) {
+            return "✔️  Alexa Connected"
+        } else {
+            return "❌  Alexa Not Connected"
+        }
     }
 
     patientID(props) {
@@ -55,7 +90,10 @@ class PatientForm extends React.Component {
     }
 
     render() {
+        const { classes } = this.props
         return (
+            <Card className={classes.root}>
+                <CardContent>
             <form onSubmit={this.handleSubmit}>
                     <TextField
                         id="name"
@@ -63,7 +101,7 @@ class PatientForm extends React.Component {
                         label="Patient Name"
                         fullWidth
                         required
-                        value={this.state.value}
+                        value={this.state.name}
                         onChange={this.handleInputChange}
                     /><br/>
                 <TextField
@@ -71,7 +109,7 @@ class PatientForm extends React.Component {
                     name="gender"
                     label="Patient Gender"
                     fullWidth
-                    value={this.state.value}
+                    value={this.state.gender}
                     onChange={this.handleInputChange}
                 /><br/>
                 <Typography variant="body1">
@@ -80,16 +118,25 @@ class PatientForm extends React.Component {
                 <input
                     name="dob"
                     type="date"
-                    value={this.state.value}
+                    value={this.state.dob}
                     placeholder="yyyy-mm-dd"
                     onChange={this.handleInputChange} /><br/>
-                <Button type="submit" value="Submit" >Add Patient</Button><br/>
+                <Button type="submit" value="Submit" >Update Patient</Button><br/>
                 <Typography variant="body1">
                     Patient ID: {this.patientID()}
                 </Typography>
+                <Typography variant="body1">
+                    {this.alexaIsConnected()}
+                </Typography>
             </form>
+                </CardContent>
+            </Card>
         )
     }
 }
 
-export default PatientForm;
+PatientForm.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(PatientForm);
