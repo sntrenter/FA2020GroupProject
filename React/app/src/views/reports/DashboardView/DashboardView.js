@@ -21,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Dashboard = () => {
+const Dashboard = ({patient,...rest}) => {
   const classes = useStyles();
-
+  console.log("Dashboard:",patient)
   return (
     <Page
       className={classes.root}
@@ -43,7 +43,8 @@ const Dashboard = () => {
             xl={3}
             xs={12}
           >
-            <Bio />
+            <Bio 
+            patient={patient}/>
       </Grid>
       </Grid>
 

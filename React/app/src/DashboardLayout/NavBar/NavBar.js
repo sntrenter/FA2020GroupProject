@@ -72,7 +72,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const NavBar = ({ onMobileClose, openMobile }) => {
+const NavBar = ({ onMobileClose, openMobile, parentCallback }) => {
   const classes = useStyles();
   const location = useLocation();
   let [names, updatenames] = useState([]);
@@ -91,7 +91,6 @@ const NavBar = ({ onMobileClose, openMobile }) => {
   }, []);
 
   function formateNames(data) {
-    console.log("########################funciton called");
     console.log(data);
     let people = [];
     //{
@@ -115,7 +114,8 @@ const NavBar = ({ onMobileClose, openMobile }) => {
   }
 
 function changePatient(id){
-  console.log(id);
+  console.log("Change id",id);
+  parentCallback(id);
 }
 
 

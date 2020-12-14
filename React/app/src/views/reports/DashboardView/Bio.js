@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Bio = ({ className, ...rest }) => {
+const Bio = ({ patient,className, ...rest }) => {
   const classes = useStyles();
-
+  console.log("REST",rest);
   return (
     <Card
       className={clsx(classes.root, className)}
@@ -58,7 +58,7 @@ const Bio = ({ className, ...rest }) => {
               color="textPrimary"
               variant="h3"
             >
-              John Patient
+              {patient?patient.title:""}
             </Typography>
           </Grid>
           <Grid item>
