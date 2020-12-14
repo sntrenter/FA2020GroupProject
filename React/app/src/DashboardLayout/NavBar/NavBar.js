@@ -104,7 +104,9 @@ const NavBar = ({ onMobileClose, openMobile, parentCallback }) => {
           href: '/app/dashboard',
           icon: PermIdentityIcon,
           title: data[i]["name"],
-          id: data[i]["patient_id"]
+          id: data[i]["patient_id"],
+          gender: data[i]["gender"],
+          dob: data[i]["dob"]
         }
       );
     }

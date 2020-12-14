@@ -79,7 +79,7 @@ const Dashboard = ({patient,...rest}) => {
             xl={3}
             xs={12}
           >
-            <PatientForm />
+            <PatientForm patient = {patient}/>
           </Grid>
           <Grid
             item
