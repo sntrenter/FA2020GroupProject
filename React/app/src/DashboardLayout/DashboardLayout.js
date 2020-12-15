@@ -52,12 +52,13 @@ const DashboardLayout = () => {
       <NavBar
         onMobileClose={() => setMobileNavOpen(false)}
         openMobile={isMobileNavOpen}
+        patient={patient}
         parentCallback={updatepatient}
       />
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
           <div className={classes.content}>
-            <Dashboard patient={patient}/>
+            <Dashboard patient={patient} parentCallback={updatepatient}/>
           </div>
         </div>
       </div>

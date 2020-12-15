@@ -30,7 +30,6 @@ class PatientForm extends React.Component {
             patient_id: null,
             device_id: null
         };
-        console.log(this.state.patient_id)
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -47,7 +46,7 @@ class PatientForm extends React.Component {
                 patient_id: this.props.patient?.id,
                 device_id: this.props.patient?.device_id
             })
-            console.log(this.props.patient?.title)
+            console.log(this.props.patient)
         }
 
     }p
@@ -76,6 +75,9 @@ class PatientForm extends React.Component {
             axios.post(url, this.state)
                 .then((response) => {
                     this.setState({patient_id: response.data.response.patient_id})
+                    this.setState({id: this.state.patient_id})
+                    this.setState({title: this.state.name})
+                    this.props.parentCallback(this.state)
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -86,7 +88,7 @@ class PatientForm extends React.Component {
     }
 
     alexaIsConnected(props) {
-        if(this.state.device_id !== null) {
+        if(this.state.device_id !== null && this.state.device_id !== undefined) {
             return "✔️  Alexa Connected"
         } else {
             return "❌  Alexa Not Connected"
