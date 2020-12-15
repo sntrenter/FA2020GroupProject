@@ -98,18 +98,32 @@ const NavBar = ({ onMobileClose, openMobile, parentCallback }) => {
     //  icon: PermIdentityIcon,
     //  title: 'Jerry Patient'
     //}
-    for (let i = 0; i < data.length; i++) {
-      people.push(
+    people.push(
         {
           href: '/app/dashboard',
-          icon: PermIdentityIcon,
-          title: data[i]["name"],
-          id: data[i]["patient_id"],
-          gender: data[i]["gender"],
-          dob: data[i]["dob"],
-          device_id: data[i]["device_id"]
+          icon: Add,
+          title: "Add Patient",
+          id: null,
+          gender: "",
+          dob: "",
+          device_id: null
         }
-      );
+    )
+    for (let i = 0; i < data.length; i++) {
+      if(data[i]["name"] !== "") {
+        people.push(
+            {
+              href: '/app/dashboard',
+              icon: PermIdentityIcon,
+              title: data[i]["name"],
+              id: data[i]["patient_id"],
+              name: data[i]["name"],
+              gender: data[i]["gender"],
+              dob: data[i]["dob"],
+              device_id: data[i]["device_id"]
+            }
+        );
+      }
     }
 
     console.log(people);
