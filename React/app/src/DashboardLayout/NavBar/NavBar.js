@@ -72,7 +72,7 @@ const useStyles = makeStyles(() => ({
   }
 }));
 
-const NavBar = ({ onMobileClose, openMobile, patient, parentCallback }) => {
+const NavBar = ({ onMobileClose, openMobile, patient, parentCallback, reload }) => {
   const classes = useStyles();
   const location = useLocation();
   let [names, updatenames] = useState([]);
@@ -88,7 +88,7 @@ const NavBar = ({ onMobileClose, openMobile, patient, parentCallback }) => {
       .catch(err => {
         console.log('Error:', err);
       })
-  }, [names]);
+  }, [reload]);
 
   function formatNames(data) {
     console.log(data);

@@ -66,6 +66,11 @@ class PatientForm extends React.Component {
             let url = 'https://cs5500-healthcare.herokuapp.com/v1/patient/update/' + this.state.patient_id
             axios.put(url, this.state)
                 .then((response) => {
+                    if(this.props.reload) {
+                        this.props.reloadCallback(false)
+                    } else {
+                        this.props.reloadCallback(true)
+                    }
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -78,6 +83,11 @@ class PatientForm extends React.Component {
                     this.setState({id: this.state.patient_id})
                     this.setState({title: this.state.name})
                     this.props.parentCallback(this.state)
+                    if(this.props.reload) {
+                        this.props.reloadCallback(false)
+                    } else {
+                        this.props.reloadCallback(true)
+                    }
                 })
                 .catch(function (error) {
                     console.log(error);

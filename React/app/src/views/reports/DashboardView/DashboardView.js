@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const Dashboard = ({patient,parentCallback,...rest}) => {
+const Dashboard = ({patient,parentCallback,reload,reloadCallback,...rest}) => {
   const classes = useStyles();
   console.log("Dashboard:",patient)
   return (
@@ -83,7 +83,7 @@ const Dashboard = ({patient,parentCallback,...rest}) => {
             xl={3}
             xs={12}
           >
-            <PatientForm patient = {patient} parentCallback = {parentCallback}/>
+            <PatientForm patient = {patient} parentCallback = {parentCallback} reload={reload} reloadCallback={reloadCallback}/>
           </Grid>
           <Grid
             item

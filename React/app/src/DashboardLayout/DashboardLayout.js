@@ -39,6 +39,7 @@ const DashboardLayout = () => {
   const [isMobileNavOpen, setMobileNavOpen] = useState(false);
 
   const [patient, updatepatient] = useState({});
+  const [reload, updatereload] = useState(false)
   console.log("dashboard layout patient:",patient);
   //newPatient = (p) => {
   //  updatepatient(p);
@@ -54,11 +55,12 @@ const DashboardLayout = () => {
         openMobile={isMobileNavOpen}
         patient={patient}
         parentCallback={updatepatient}
+        reload={reload}
       />
       <div className={classes.wrapper}>
         <div className={classes.contentContainer}>
           <div className={classes.content}>
-            <Dashboard patient={patient} parentCallback={updatepatient}/>
+            <Dashboard patient={patient} parentCallback={updatepatient} reload={reload} reloadCallback={updatereload}/>
           </div>
         </div>
       </div>
