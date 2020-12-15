@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 import {
@@ -124,8 +123,14 @@ class PatientForm extends React.Component {
     deletePatient(props) {
         if(this.state.patient_id != null){
             let url = 'https://cs5500-healthcare.herokuapp.com/v1/user/delete_patient/' + this.state.patient_id
-            axios.delete(url, this.state)
+            axios.delete(url)
                 .then((response) => {
+                    this.props.parentCallback({})
+                    if(this.props.reload) {
+                        this.props.reloadCallback(false)
+                    } else {
+                        this.props.reloadCallback(true)
+                    }
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -172,7 +177,7 @@ class PatientForm extends React.Component {
                 <Typography variant="body1">
                     {this.alexaIsConnected()}
                 </Typography><br/>
-                {/*<Button onclick={this.deletePatient()}>Delete Patient</Button><br/>*/}
+                <Button onClick={() => this.deletePatient()}>Delete Patient</Button>
             </form>
                 </CardContent>
             </Card>
