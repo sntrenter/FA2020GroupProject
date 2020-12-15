@@ -25,7 +25,7 @@ const BarGraph = ({ patient,className, ...rest }) => {
   const classes = useStyles();
   const theme = useTheme();
 
-  const url = "https://cs5500-healthcare.herokuapp.com/v1/summaryactivity";
+  let url = patient.id == undefined? false :"https://cs5500-healthcare.herokuapp.com/v1/patient/overview/" + patient.id;
 
   
   console.log('testing bar graph');
@@ -33,17 +33,18 @@ const BarGraph = ({ patient,className, ...rest }) => {
   let [dates,updatedates] = useState([]);
   console.log(dates);
   const getAverageQuantities = function(promiseResponse) {
-      
-      console.log(promiseResponse);
-      let newdataArray = [];
-      let newdates = [];
-      for(var key in promiseResponse) {
-        newdataArray.push(promiseResponse[key].data.average_quantity);
-        newdates.push(promiseResponse[key].date_time);
-      }
-      updatdataArray(newdataArray)
-      updatedates(newdates)
-      return dataArray;
+
+      let nights = promiseResponse.response.sleep;
+      let d = []
+      let h = []
+      nights.forEach(e => {
+        d.push(e.date);
+        h.push(e.hours);
+      });
+      updatdataArray(h)
+      updatedates(d)
+
+      return {d,h};
   }
 
 
@@ -58,7 +59,7 @@ useEffect(()=>{
   .catch(err => {
     console.log('Error:', err);
   })
-},[]);
+},[url]);
 
 
   // console.log(summaryData());

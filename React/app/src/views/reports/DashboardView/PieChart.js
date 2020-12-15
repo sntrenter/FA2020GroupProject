@@ -69,7 +69,7 @@ const PieChart = ({ patient,className, ...rest }) => {
     .catch(err => {
       console.log('Error:', err);
     })
-  },[url,per]);
+  },[url]);
 
 
   const data = {
