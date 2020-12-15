@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import axios from 'axios';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+
 import {
     TextField,
     Button,
@@ -25,8 +26,8 @@ class PatientForm extends React.Component {
         this.state = {
             name: "",
             gender: "",
-            dob: "2020-01-01",
-            patient_id: "",
+            dob: "",
+            patient_id: null,
             device_id: null
         };
         console.log(this.state.patient_id)
@@ -40,9 +41,9 @@ class PatientForm extends React.Component {
     componentDidUpdate(prevProps, prevState, snapshot) {
         if (this.props.patient !== prevProps.patient) {
             this.setState({
-                name: this.props.patient?.title,
-                gender: this.props.patient?.gender,
-                dob: this.props.patient?.dob,
+                name: this.props.patient?.name ?? "",
+                gender: this.props.patient?.gender ?? "",
+                dob: this.props.patient?.dob ?? "",
                 patient_id: this.props.patient?.id,
                 device_id: this.props.patient?.device_id
             })
@@ -62,19 +63,30 @@ class PatientForm extends React.Component {
     }
 
     handleSubmit(event) {
-        let url = 'https://cs5500-healthcare.herokuapp.com/v1/patient/update/' + this.state.patient_id
-        axios.put(url, this.state)
-            .then((response) => {
-             //   this.setState({patient_id: response.data.response.patient_id})
-            })
-            .catch(function (error) {
-                console.log(error);
-            })
+        if (this.state.patient_id !== null) {
+            let url = 'https://cs5500-healthcare.herokuapp.com/v1/patient/update/' + this.state.patient_id
+            axios.put(url, this.state)
+                .then((response) => {
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        } else {
+            let url = 'https://cs5500-healthcare.herokuapp.com/v1/patient/register'
+            axios.post(url, this.state)
+                .then((response) => {
+                    this.setState({patient_id: response.data.response.patient_id})
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+        }
+
         event.preventDefault();
     }
 
     alexaIsConnected(props) {
-        if(this.state.device_id != null) {
+        if(this.state.device_id !== null) {
             return "✔️  Alexa Connected"
         } else {
             return "❌  Alexa Not Connected"
@@ -86,6 +98,26 @@ class PatientForm extends React.Component {
             return this.state.patient_id
         } else {
             return ""
+        }
+    }
+
+    buttonText(props) {
+        if(this.state.patient_id === null) {
+            return "Add Patient"
+        } else {
+            return "Update Patient"
+        }
+    }
+
+    deletePatient(props) {
+        if(this.state.patient_id != null){
+            let url = 'https://cs5500-healthcare.herokuapp.com/v1/user/delete_patient/' + this.state.patient_id
+            axios.delete(url, this.state)
+                .then((response) => {
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
         }
     }
 
@@ -121,13 +153,14 @@ class PatientForm extends React.Component {
                     value={this.state.dob}
                     placeholder="yyyy-mm-dd"
                     onChange={this.handleInputChange} /><br/>
-                <Button type="submit" value="Submit" >Update Patient</Button><br/>
+                <Button type="submit" value="Submit" >{this.buttonText()}</Button><br/>
                 <Typography variant="body1">
                     Patient ID: {this.patientID()}
                 </Typography>
                 <Typography variant="body1">
                     {this.alexaIsConnected()}
-                </Typography>
+                </Typography><br/>
+                {/*<Button onclick={this.deletePatient()}>Delete Patient</Button><br/>*/}
             </form>
                 </CardContent>
             </Card>
